@@ -1,0 +1,31 @@
+@media (max-width: 1024px) {
+  .main-nav { gap: 12px; }
+  .main-nav a { font-size: .76rem; }
+  .schedule { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 800px) {
+  .header-content { flex-wrap: wrap; padding: 12px 0; }
+  .menu-toggle { display: grid; gap: 5px; width: 40px; height: 40px; place-content: center; margin-left: auto; }
+  .menu-toggle span { display: block; width: 22px; height: 2px; background: currentColor; }
+  .main-nav { display: none; order: 4; width: 100%; padding: 14px 0 4px; border-top: 1px solid var(--border); flex-direction: column; align-items: flex-start; }
+  .main-nav.is-open { display: flex; }
+  .main-nav a { width: 100%; padding: 8px 0; font-size: .95rem; }
+  .header-actions .button-small { display: none; }
+  .section-grid, .ticket-layout { grid-template-columns: 1fr; }
+  .video-grid, .blog-grid { grid-template-columns: 1fr 1fr; }
+  .instagram-grid { grid-template-columns: repeat(2, 1fr); }
+  .newsletter-form { grid-template-columns: 1fr; }
+  .newsletter-form .form-message { grid-column: auto; }
+}
+
+@media (max-width: 560px) {
+  .container { width: min(100% - 28px, 1120px); }
+  .section { padding: 70px 0; }
+  .brand { max-width: 210px; font-size: .82rem; white-space: normal; }
+  .hero { min-height: 600px; }
+  .hero-content { padding: 64px 0; }
+  .schedule, .video-grid, .blog-grid, .instagram-grid, .form-row { grid-template-columns: 1fr; }
+  .hero-actions .button { width: 100%; }
+  .footer-content { flex-direction: column; align-items: flex-start; }
+}
