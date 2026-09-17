@@ -24,39 +24,49 @@
 
     <header class="site-header">
       <div class="container header-content">
-        <a class="brand" href="#inicio" aria-label="Página inicial do evento">
-          <span class="brand-mark" aria-hidden="true">♪</span>
-          <span>Evento de Canto Católico</span>
-        </a>
+      <a class="brand" href="#inicio" aria-label="Página inicial do evento">
+      <span class="brand-mark" aria-hidden="true">♪</span>
+      <span>Evento de Canto Católico</span>
+    </a>
 
-        <button
-          id="theme-toggle"
-          class="theme-toggle"
-          type="button"
-          aria-label="Ativar tema escuro"
-          aria-pressed="false"
-          title="Ativar tema escuro"
-          >
-          <span aria-hidden="true">☀</span>
-        </button>
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Abrir menu de navegação"
+      aria-expanded="false"
+      aria-controls="menu-principal"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-        <nav id="menu-principal" class="main-nav" aria-label="Navegação principal">
-          <a href="#evento">O evento</a>
-          <a href="#programacao">Programação</a>
-          <a href="#videos">Vídeos</a>
-          <a href="#ingressos">Ingressos</a>
-          <a href="#blog">Blog</a>
-          <a href="#instagram">Instagram</a>
-        </nav>
+    <nav id="menu-principal" class="main-nav" aria-label="Navegação principal">
+      <a href="#evento">O evento</a>
+      <a href="#programacao">Programação</a>
+      <a href="#videos">Vídeos</a>
+      <a href="#ingressos">Ingressos</a>
+      <a href="#blog">Blog</a>
+      <a href="#instagram">Instagram</a>
+    </nav>
 
-        <div class="header-actions">
-          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Ativar tema escuro" aria-pressed="false">
-            <span aria-hidden="true">◐</span>
-          </button>
-          <a class="button button-small" href="#ingressos">Comprar ingresso</a>
-        </div>
-      </div>
-    </header>
+    <div class="header-actions">
+      <a class="button button-small" href="#ingressos">Comprar ingresso</a>
+
+      <!-- Único botão de tema; ele fica no lugar do antigo botão da direita -->
+      <button
+        id="theme-toggle"
+        class="theme-toggle"
+        type="button"
+        aria-label="Ativar tema escuro"
+        aria-pressed="false"
+        title="Ativar tema escuro"
+      >
+        <span aria-hidden="true">☀</span>
+      </button>
+    </div>
+  </div>
+</header>
 
     <main id="conteudo">
       <section id="inicio" class="hero" aria-labelledby="titulo-principal">
