@@ -1,19 +1,47 @@
-const themeToggle = document.querySelector('#theme-toggle');
-const root = document.documentElement;
+(() => {
+  'use strict';
 
-function applyTheme(theme) {
-  root.dataset.theme = theme;
-  const isDark = theme === 'dark';
-  themeToggle?.setAttribute('aria-pressed', String(isDark));
-  themeToggle?.setAttribute('aria-label', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
-}
+  function initThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const root = document.documentElement;
 
-const storedTheme = localStorage.getItem('tema-evento');
-const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-applyTheme(storedTheme || preferredTheme);
+    if (!themeToggle) {
+      console.error('Botão #theme-toggle não foi encontrado.');
+      return;
+    }
 
-themeToggle?.addEventListener('click', () => {
-  const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-  applyTheme(nextTheme);
-  localStorage.setItem('tema-evento', nextTheme);
-});
+    const savedTheme = localStorage.getItem('tema-evento');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+    function updateTheme(theme) {
+      const isDark = theme === 'dark';
+      root.setAttribute('data-theme', theme);
+
+      themeToggle.innerHTML = isDark
+        ? '<span aria-hidden="true">☾</span>'
+        : '<span aria-hidden="true">☀</span>';
+
+      themeToggle.setAttribute(
+        'aria-label',
+        isDark ? 'Ativar tema claro' : 'Ativar tema escuro'
+      );
+      themeToggle.setAttribute('title', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
+      themeToggle.setAttribute('aria-pressed', String(isDark));
+      localStorage.setItem('tema-evento', theme);
+    }
+
+    updateTheme(initialTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = root.getAttribute('data-theme') || 'light';
+      updateTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initThemeToggle);
+  } else {
+    initThemeToggle();
+  }
+})();

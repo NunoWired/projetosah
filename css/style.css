@@ -2,16 +2,17 @@
   --navy: #23354d;
   --blue-gray: #94a1aa;
   --brown: #73553c;
-  --beige: #dbc bba;
+  --beige: #dbcbba;
   --off-white: #f2f2f2;
   --terracotta: #c28267;
-  --beige-safe: #dbc bba;
+
   --text: var(--navy);
   --background: var(--off-white);
   --surface: #ffffff;
   --surface-alt: #e8e8e8;
   --border: #d3d7da;
   --shadow: 0 14px 34px rgba(35, 53, 77, 0.12);
+
   --font-body: "Montserrat", Arial, sans-serif;
   --font-display: "Playfair Display", Georgia, serif;
 }
