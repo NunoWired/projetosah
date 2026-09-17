@@ -25,15 +25,6 @@ js/
 index.html   Página principal
 ```
 
-## Paleta de cores
-
-- Azul-marinho: `#23354D`
-- Cinza-azulado: `#94A1AA`
-- Marrom: `#73553C`
-- Bege: `#DBCBBA`
-- Branco-gelo: `#F2F2F2`
-- Terracota: `#C28267`
-
 ## Próximas etapas
 
 - Substituir os textos provisórios pelos dados oficiais do evento.
