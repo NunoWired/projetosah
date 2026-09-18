@@ -183,6 +183,33 @@ input, select { width: 100%; padding: 12px; color: var(--text); background: var(
     url("../assets/images/mapa-escuro.png");
 }
 
+.schedule-location {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f2f2f2;
+  background-image:
+    linear-gradient(
+      rgba(242, 242, 242, 0.76),
+      rgba(242, 242, 242, 0.86)
+    ),
+    url("../assets/images/mapa-claro.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Camada escura para o tema escuro */
+[data-theme="dark"] .schedule-location {
+  background-color: #23354d;
+  background-image:
+    linear-gradient(
+      rgba(35, 53, 77, 0.86),
+      rgba(35, 53, 77, 0.94)
+    ),
+    url("../assets/images/mapa-escuro.jpg");
+}
+
 .location-link {
   display: flex;
   min-height: 100%;
