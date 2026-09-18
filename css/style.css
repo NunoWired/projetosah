@@ -193,7 +193,7 @@ input, select { width: 100%; padding: 12px; color: var(--text); background: var(
       rgba(242, 242, 242, 0.76),
       rgba(242, 242, 242, 0.86)
     ),
-    url("../assets/images/mapa-claro.png");
+    url("../assets/images/mapa-claro.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
