@@ -155,3 +155,53 @@ input, select { width: 100%; padding: 12px; color: var(--text); background: var(
       url("../assets/images/imagem_banner.jpg");
   }
 }
+
+.schedule-location {
+  padding: 0;
+  overflow: hidden;
+}
+
+.location-link {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.location-link:hover {
+  background-color: rgba(194, 130, 103, 0.12);
+  transform: translateY(-2px);
+}
+
+.location-link:focus-visible {
+  outline: 3px solid var(--terracotta);
+  outline-offset: -3px;
+}
+
+.location-icon {
+  color: var(--terracotta);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.location-link strong {
+  color: var(--terracotta);
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.location-address {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.location-action {
+  margin-top: auto;
+  color: var(--terracotta);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
