@@ -157,23 +157,46 @@ input, select { width: 100%; padding: 12px; color: var(--text); background: var(
 }
 
 .schedule-location {
+  position: relative;
   padding: 0;
   overflow: hidden;
+  background-color: #f2f2f2;
+  background-image:
+    linear-gradient(
+      rgba(242, 242, 242, 0.76),
+      rgba(242, 242, 242, 0.86)
+    ),
+    url("../assets/images/mapa-claro.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Camada escura para o tema escuro */
+[data-theme="dark"] .schedule-location {
+  background-color: #23354d;
+  background-image:
+    linear-gradient(
+      rgba(35, 53, 77, 0.86),
+      rgba(35, 53, 77, 0.94)
+    ),
+    url("../assets/images/mapa-escuro.png");
 }
 
 .location-link {
   display: flex;
   min-height: 100%;
+  min-height: 210px;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   padding: 22px;
-  color: inherit;
+  color: var(--text);
   text-decoration: none;
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .location-link:hover {
-  background-color: rgba(194, 130, 103, 0.12);
+  background-color: rgba(194, 130, 103, 0.14);
   transform: translateY(-2px);
 }
 
@@ -182,21 +205,17 @@ input, select { width: 100%; padding: 12px; color: var(--text); background: var(
   outline-offset: -3px;
 }
 
-.location-icon {
-  color: var(--terracotta);
-  font-size: 1.5rem;
-  line-height: 1;
-}
-
 .location-link strong {
+  max-width: 250px;
   color: var(--terracotta);
   font-size: 1.05rem;
   line-height: 1.5;
 }
 
 .location-address {
+  max-width: 250px;
   font-size: 0.9rem;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .location-action {
