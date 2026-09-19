@@ -3,13 +3,19 @@ const mainNav = document.querySelector('.main-nav');
 const currentYear = document.querySelector('#current-year');
 const ticketForm = document.querySelector('#ticket-form');
 const newsletterForm = document.querySelector('#newsletter-form');
+const backToTopButton = document.querySelector('#back-to-top');
 
-currentYear.textContent = new Date().getFullYear();
+if (currentYear) {
+  currentYear.textContent = new Date().getFullYear();
+}
 
 menuToggle?.addEventListener('click', () => {
   const open = mainNav.classList.toggle('is-open');
   menuToggle.setAttribute('aria-expanded', String(open));
-  menuToggle.setAttribute('aria-label', open ? 'Fechar menu de navegação' : 'Abrir menu de navegação');
+  menuToggle.setAttribute(
+    'aria-label',
+    open ? 'Fechar menu de navegação' : 'Abrir menu de navegação'
+  );
 });
 
 document.querySelectorAll('.main-nav a').forEach((link) => {
@@ -28,7 +34,10 @@ ticketForm?.addEventListener('submit', (event) => {
     return;
   }
 
-  message.textContent = 'Formulário validado. A integração segura com Pix será adicionada na próxima etapa.';
+  if (message) {
+    message.textContent =
+      'Formulário validado. A integração segura com Pix será adicionada na próxima etapa.';
+  }
 });
 
 newsletterForm?.addEventListener('submit', (event) => {
@@ -40,25 +49,22 @@ newsletterForm?.addEventListener('submit', (event) => {
     return;
   }
 
-  message.textContent = 'Cadastro validado. A integração com o serviço de e-mail será adicionada em breve.';
+  if (message) {
+    message.textContent =
+      'Cadastro validado. A integração com o serviço de e-mail será adicionada em breve.';
+  }
+
   newsletterForm.reset();
 });
 
-const backToTopButton = document.querySelector('#back-to-top');
-
 function toggleBackToTopButton() {
-  const showAfter = 350;
-  const isVisible = window.scrollY > showAfter;
-
-  backToTopButton?.classList.toggle('is-visible', isVisible);
+  if (!backToTopButton) return;
+  backToTopButton.classList.toggle('is-visible', window.scrollY > 350);
 }
 
 window.addEventListener('scroll', toggleBackToTopButton, { passive: true });
 toggleBackToTopButton();
 
 backToTopButton?.addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
