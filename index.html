@@ -71,7 +71,7 @@
       <section id="inicio" class="hero" aria-labelledby="titulo-principal">
         <div class="container hero-content">
           <!-- <p class="eyebrow">Música • Fé • Comunhão</p> -->
-          <h1 id="titulo-principal">Gravação do Show em Comemoração de 20 anos de Louvor</h1>
+          <h1 id="titulo-principal">Gravação do Show em Comemoração aos 20 anos de Louvor</h1>
           <p class="hero-text">Inclua aqui o nome do evento, a data, o horário e uma breve mensagem de convite.</p>
           <div class="hero-info" aria-label="Informações principais do evento">
             <p><strong>Data:</strong> Em breve</p>
@@ -97,7 +97,47 @@
         </div>
       </section>
 
-      <section id="programacao" class="section section-alt" aria-labelledby="titulo-programacao">
+      <section id="blog" class="section" aria-labelledby="titulo-blog">
+        <div class="container">
+          <p class="eyebrow">Informe-se</p>
+          <h2 id="titulo-blog">Prepare-se para esta grande noite</h2>
+          <div class="blog-grid">
+            <article class="post-card"><p class="post-date">Programe-se</p><h3>Data e Horário</h3><p>28 de novembro de 2026, às 18h30 (horário de Brasília)</p>
+            <article class="post-card"><p class="post-date">Em breve</p><h3>Conheça o músico convidado</h3><p>Apresente a história, missão e repertório do artista.</p>
+            <article class="post-card">
+              <p
+                class="location-link"
+                href="https://www.google.com/maps/dir/?api=1&destination=-15.8004704,-48.0743932"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Abrir rota no Google Maps para a Escola Classe 26 de Setembro de Taguatinga"
+
+                <strong Escola Classe 26 de Setembro de Taguatinga</strong>
+
+                <span class="location-address">
+                  St. G Norte AE 8 - Taguatinga, Brasília - DF, 72130-460
+                </span>
+
+                <span class="location-action">
+                  Abrir rota no Google Maps →
+                </span>
+              </p>
+            </article>
+          </div>
+          <form id="newsletter-form" class="newsletter-form" novalidate>
+            <div>
+              <h3>Receba as novidades</h3>
+              <p>Inscreva-se para receber avisos sobre vendas, programação e conteúdos do evento.</p>
+            </div>
+            <label class="sr-only" for="newsletter-email">Seu e-mail</label>
+            <input id="newsletter-email" name="newsletter-email" type="email" placeholder="Seu melhor e-mail" autocomplete="email" required />
+            <button class="button" type="submit">Inscrever-me</button>
+            <p id="newsletter-message" class="form-message" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <!-- <section id="programacao" class="section section-alt" aria-labelledby="titulo-programacao">
         <div class="container">
           <p class="eyebrow">Informe-se</p>
           <h2 id="titulo-programacao">Prepare-se para esta noite especial</h2>
@@ -112,8 +152,6 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Abrir rota no Google Maps para a Escola Classe 26 de Setembro de Taguatinga"
-  >
-                <!-- <span class="location-icon" aria-hidden="true">⌖</span> -->
 
                 <strong>Escola Classe 26 de Setembro de Taguatinga</strong>
 
@@ -128,19 +166,7 @@
             </article>
           </div>
         </div>
-      </section>
-
-      <section id="videos" class="section" aria-labelledby="titulo-videos">
-        <div class="container">
-          <p class="eyebrow">Assista</p>
-          <h2 id="titulo-videos">Músicas que aproximam corações</h2>
-          <div class="video-grid">
-            <article class="video-card"><div class="video-placeholder">Vídeo do YouTube 1</div><h3>Apresentação ou convite</h3></article>
-            <article class="video-card"><div class="video-placeholder">Vídeo do YouTube 2</div><h3>Canção em destaque</h3></article>
-            <article class="video-card"><div class="video-placeholder">Vídeo do YouTube 3</div><h3>Mensagem ao público</h3></article>
-          </div>
-        </div>
-      </section>
+      </section> -->
 
       <section id="ingressos" class="section section-ticket" aria-labelledby="titulo-ingressos">
         <div class="container ticket-layout">
@@ -198,25 +224,15 @@
         </div>
       </section>
 
-      <section id="blog" class="section" aria-labelledby="titulo-blog">
+      <section id="videos" class="section" aria-labelledby="titulo-videos">
         <div class="container">
-          <p class="eyebrow">Novidades</p>
-          <h2 id="titulo-blog">Acompanhe as notícias do evento</h2>
-          <div class="blog-grid">
-            <article class="post-card"><p class="post-date">Em breve</p><h3>Datas e lotes de ingresso</h3><p>Publique atualizações sobre datas, valores promocionais e disponibilidade.</p><a href="#" aria-label="Ler mais sobre datas e lotes de ingresso">Ler mais</a></article>
-            <article class="post-card"><p class="post-date">Em breve</p><h3>Conheça o músico convidado</h3><p>Apresente a história, missão e repertório do artista.</p><a href="#" aria-label="Ler mais sobre o músico convidado">Ler mais</a></article>
-            <article class="post-card"><p class="post-date">Em breve</p><h3>Como se preparar</h3><p>Compartilhe informações úteis para aproveitar melhor o encontro.</p><a href="#" aria-label="Ler mais sobre como se preparar">Ler mais</a></article>
+          <p class="eyebrow">Assista</p>
+          <h2 id="titulo-videos">Músicas que aproximam corações</h2>
+          <div class="video-grid">
+            <article class="video-card"><div class="video-placeholder">Vídeo do YouTube 1</div><h3>Apresentação ou convite</h3></article>
+            <article class="video-card"><div class="video-placeholder">Vídeo do YouTube 2</div><h3>Canção em destaque</h3></article>
+            <article class="video-card"><div class="video-placeholder">Vídeo do YouTube 3</div><h3>Mensagem ao público</h3></article>
           </div>
-          <form id="newsletter-form" class="newsletter-form" novalidate>
-            <div>
-              <h3>Receba as novidades</h3>
-              <p>Inscreva-se para receber avisos sobre vendas, programação e conteúdos do evento.</p>
-            </div>
-            <label class="sr-only" for="newsletter-email">Seu e-mail</label>
-            <input id="newsletter-email" name="newsletter-email" type="email" placeholder="Seu melhor e-mail" autocomplete="email" required />
-            <button class="button" type="submit">Inscrever-me</button>
-            <p id="newsletter-message" class="form-message" aria-live="polite"></p>
-          </form>
         </div>
       </section>
 
