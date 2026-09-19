@@ -71,6 +71,77 @@ h3 { margin-top: 0; }
 .section-grid, .ticket-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(32px, 7vw, 90px); align-items: start; }
 .post-card, .video-card { padding: 18px; background: var(--surface); box-shadow: var(--shadow); }
 .post-date { margin-bottom: 8px; color: var(--terracotta); font-size: .8rem; font-weight: 700; text-transform: uppercase; }
+
+.sponsors-block {
+  display: grid;
+  grid-template-columns: minmax(230px, .9fr) minmax(0, 2.1fr);
+  gap: clamp(28px, 5vw, 70px);
+  align-items: center;
+  margin-top: 72px;
+}
+
+.sponsors-title {
+  margin: 0;
+  color: var(--terracotta);
+  font-family: var(--font-body);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.sponsors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(110px, 1fr));
+  gap: 18px 22px;
+}
+
+.sponsor-card {
+  display: grid;
+  min-height: 116px;
+  place-items: center;
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.sponsor-card:hover {
+  border-color: var(--terracotta);
+  box-shadow: 0 16px 30px rgba(35, 53, 77, .18);
+  transform: translateY(-4px);
+}
+
+.sponsor-card:focus-visible {
+  outline: 3px solid var(--terracotta);
+  outline-offset: 4px;
+}
+
+[data-theme="dark"] .sponsor-card {
+  background: #f2f2f2;
+  border-color: rgba(242, 242, 242, .28);
+}
+
+@media (max-width: 800px) {
+  .sponsors-block {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+}
+
+@media (max-width: 560px) {
+  .sponsors-grid {
+    grid-template-columns: repeat(2, minmax(110px, 1fr));
+  }
+
+  .sponsor-card {
+    min-height: 100px;
+  }
+}
+
+
 #informese { background: var(--surface-alt); }
 .informese-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; align-items: stretch; margin-top: 35px; }
 .informese-card { display: flex; min-height: 230px; flex-direction: column; border-top: 4px solid var(--terracotta); }
