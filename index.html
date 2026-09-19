@@ -131,6 +131,39 @@
         <p>Este espaço será utilizado para uma informação importante sobre o evento.</p>
       </article>
     </div>
+
+<form id="newsletter-form" class="newsletter-form" novalidate>
+  <div>
+    <h3>Receba as novidades</h3>
+
+    <p>
+      Inscreva-se para receber avisos sobre vendas, programação e conteúdos
+      do evento.
+    </p>
+  </div>
+
+  <div>
+    <label class="sr-only" for="newsletter-email">
+      Seu e-mail
+    </label>
+
+    <input
+      id="newsletter-email"
+      name="newsletter-email"
+      type="email"
+      placeholder="Seu melhor e-mail"
+      autocomplete="email"
+      required
+    />
+  </div>
+
+  <button class="button" type="submit">
+    Inscrever-me
+  </button>
+
+  <p id="newsletter-message" class="form-message" aria-live="polite"></p>
+</form>
+
   </div>
 </section>
 
