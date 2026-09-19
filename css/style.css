@@ -251,3 +251,90 @@ input, select { width: 100%; padding: 12px; color: var(--text); background: var(
   font-size: 0.8rem;
   font-weight: 700;
 }
+
+#informese {
+  background: var(--surface-alt);
+}
+
+.informese-grid {
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
+  margin-top: 35px;
+}
+
+.informese-card {
+  display: flex;
+  min-height: 230px;
+  flex-direction: column;
+  border-top: 4px solid var(--terracotta);
+}
+
+.informese-card h3 {
+  color: var(--terracotta);
+}
+
+.informese-location-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: var(--surface);
+}
+
+.informese-location-card::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  background-image:
+    linear-gradient(
+      rgba(242, 242, 242, 0.82),
+      rgba(242, 242, 242, 0.92)
+    ),
+    url("../assets/images/mapa-claro.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+[data-theme="dark"] .informese-location-card::before {
+  background-image:
+    linear-gradient(
+      rgba(35, 53, 77, 0.84),
+      rgba(35, 53, 77, 0.95)
+    ),
+    url("../assets/images/mapa-claro.png");
+  filter: grayscale(0.55) saturate(0.7) brightness(0.72);
+}
+
+.informese-location-link {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  color: inherit;
+  text-decoration: none;
+}
+
+.informese-location-link:hover h3,
+.informese-location-link:focus-visible h3 {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.informese-location-link span {
+  margin-top: auto;
+  color: var(--terracotta);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+@media (max-width: 800px) {
+  .informese-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .informese-grid {
+    grid-template-columns: 1fr;
+  }
+}
