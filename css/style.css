@@ -870,3 +870,12 @@ html:not([data-theme="dark"]) .brand-title {
     height: 44px;
   }
 }
+
+.sponsors-title {
+  color: var(--text) !important;
+  transition: color 0.25s ease;
+}
+
+[data-theme="dark"] .sponsors-title {
+  color: #ffffff !important;
+}
