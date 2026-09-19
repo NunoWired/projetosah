@@ -43,3 +43,22 @@ newsletterForm?.addEventListener('submit', (event) => {
   message.textContent = 'Cadastro validado. A integração com o serviço de e-mail será adicionada em breve.';
   newsletterForm.reset();
 });
+
+const backToTopButton = document.querySelector('#back-to-top');
+
+function toggleBackToTopButton() {
+  const showAfter = 350;
+  const isVisible = window.scrollY > showAfter;
+
+  backToTopButton?.classList.toggle('is-visible', isVisible);
+}
+
+window.addEventListener('scroll', toggleBackToTopButton, { passive: true });
+toggleBackToTopButton();
+
+backToTopButton?.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+});
