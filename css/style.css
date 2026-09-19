@@ -879,3 +879,30 @@ html:not([data-theme="dark"]) .brand-title {
 [data-theme="dark"] .sponsors-title {
   color: #ffffff !important;
 }
+
+.informese-location-card {
+  background-color: #f2f2f2 !important;
+  background-image:
+    linear-gradient(rgba(242, 242, 242, 0.72),
+      rgba(242, 242, 242, 0.84)),
+    url("../assets/images/mapa-claro.jpg") !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+html:not([data-theme="dark"]) .informese-location-card {
+  background-color: #f2f2f2 !important;
+  background-image:
+    linear-gradient(rgba(242, 242, 242, 0.72),
+      rgba(242, 242, 242, 0.84)),
+    url("../assets/images/mapa-claro.jpg") !important;
+}
+
+[data-theme="dark"] .informese-location-card {
+  background-color: var(--navy) !important;
+  background-image:
+    linear-gradient(rgba(35, 53, 77, 0.78),
+      rgba(35, 53, 77, 0.90)),
+    url("../assets/images/mapa-escuro.jpg") !important;
+}
