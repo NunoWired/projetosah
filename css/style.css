@@ -948,3 +948,39 @@ html:not([data-theme="dark"]) .brand-title {
     font-size: 1.2rem;
   }
 }
+
+.brand-mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  flex: 0 0 42px;
+  overflow: hidden;
+  background: transparent;
+  border-radius: 50%;
+}
+
+.brand-logo-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Tema claro */
+html:not([data-theme="dark"]) .brand-logo-image {
+  content: url("../assets/images/logo-tema-claro.png");
+}
+
+/* Tema escuro */
+[data-theme="dark"] .brand-logo-image {
+  content: url("../assets/images/logo-tema-escuro.png");
+}
+
+@media (max-width: 560px) {
+  .brand-mark {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+  }
+}
