@@ -155,7 +155,7 @@ h3 {
   place-items: center;
   flex: 0 0 42px;
   overflow: hidden;
-  background: var(--terracotta);
+  background: transparent;
   border-radius: 50%;
 }
 
