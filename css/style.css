@@ -1203,3 +1203,37 @@ html:not([data-theme="dark"]) .brand-logo-image {
     opacity: 1;
   }
 }
+
+/* Logo exibida apenas dentro do menu mobile */
+.mobile-menu-logo {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .mobile-menu-logo {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 26px;
+  }
+
+  .mobile-menu-logo-image {
+    display: block;
+    width: min(140px, 42vw);
+    height: auto;
+    max-height: 100px;
+    object-fit: contain;
+    opacity: 0.9;
+  }
+
+  /* Tema claro */
+  html:not([data-theme="dark"]) .mobile-menu-logo-image {
+    content: url("../assets/images/logo-tema-claro.png");
+  }
+
+  /* Tema escuro */
+  [data-theme="dark"] .mobile-menu-logo-image {
+    content: url("../assets/images/logo-tema-escuro.png");
+    opacity: 1;
+  }
+}
