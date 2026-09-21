@@ -906,3 +906,8 @@ html:not([data-theme="dark"]) .informese-location-card {
       rgba(35, 53, 77, 0.90)),
     url("../assets/images/mapa-escuro.jpg") !important;
 }
+
+.brand-title {
+  font-family: "Caveat", cursive;
+  transform: none;
+}
