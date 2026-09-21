@@ -1177,3 +1177,29 @@ html:not([data-theme="dark"]) .brand-logo-image {
     overflow: hidden;
   }
 }
+
+.mobile-menu-logo {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .mobile-menu-logo {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 26px;
+  }
+
+  .mobile-menu-logo img {
+    display: block;
+    width: min(140px, 42vw);
+    height: auto;
+    max-height: 100px;
+    object-fit: contain;
+    opacity: 0.88;
+  }
+
+  [data-theme="dark"] .mobile-menu-logo img {
+    opacity: 1;
+  }
+}
