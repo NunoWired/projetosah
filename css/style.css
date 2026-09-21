@@ -1000,3 +1000,37 @@ html:not([data-theme="dark"]) .brand-logo-image {
   height: 100%;
   border: 0;
 }
+
+.instagram-embed-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  align-items: start;
+  margin: 30px 0;
+}
+
+.instagram-embed-card {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* O Instagram cria uma largura mínima no embed;
+   esta regra evita que o layout ultrapasse a tela */
+.instagram-embed-card .instagram-media {
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 1024px) {
+  .instagram-embed-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .instagram-embed-grid {
+    grid-template-columns: 1fr;
+  }
+}
