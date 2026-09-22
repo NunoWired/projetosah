@@ -1384,7 +1384,7 @@ html:not([data-theme="dark"]) .brand-logo-image {
 
 .informese-location-link:hover .google-maps-icon,
 .informese-location-link:focus-visible .google-maps-icon {
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
 @media (max-width: 560px) {
