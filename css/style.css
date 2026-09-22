@@ -1075,7 +1075,8 @@ html:not([data-theme="dark"]) .brand-logo-image {
     position: absolute;
     z-index: -1;
     inset: 0;
-    display: block;
+    pointer-events: none;
+    /* display: block; */
     background: linear-gradient(90deg,
         rgba(35, 53, 77, 0.93) 0%,
         rgba(35, 53, 77, 0.78) 55%,
