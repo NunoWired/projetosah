@@ -1457,3 +1457,30 @@ html:not([data-theme="dark"]) .brand-logo-image {
     height: 36px;
   }
 }
+
+@media (max-width: 560px) {
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    white-space: nowrap;
+  }
+
+  .brand img,
+  .brand-mark {
+    width: auto;
+    height: 48px;
+    max-width: 115px;
+    flex: 0 0 auto;
+    object-fit: contain;
+  }
+
+  .brand-name {
+    flex: 0 1 auto;
+    min-width: 0;
+    font-size: 0.92rem;
+    line-height: 1;
+    white-space: nowrap;
+  }
+}
