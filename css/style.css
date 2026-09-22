@@ -1370,16 +1370,16 @@ html:not([data-theme="dark"]) .brand-logo-image {
 
 .informese-location-link {
   position: relative;
+  display:flex;
+  flex-direction: column;
 }
 
 .google-maps-icon {
   display: block;
-  width: 76px;
-  height: 76px;
-  margin: auto 0 18px auto;
+  width: 92px;
+  height: 92px;
+  margin: 28px 0 0 auto;
   object-fit: contain;
-  border-radius: 50%;
-  transition: transform .25s ease;
 }
 
 .informese-location-link:hover .google-maps-icon,
