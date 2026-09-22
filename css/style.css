@@ -1463,7 +1463,7 @@ html:not([data-theme="dark"]) .brand-logo-image {
   .brand-mark {
     width: auto;
     height: 22px;
-    max-width: 100px;
+    max-width: 75px;
     object-fit: contain;
   }
 
