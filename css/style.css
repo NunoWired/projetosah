@@ -1447,8 +1447,11 @@ html:not([data-theme="dark"]) .brand-logo-image {
 
 @media (max-width: 560px) {
   .brand {
-    gap: 9px;
-    font-size: 1.15rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    white-space: nowrap;
   }
 
   .brand-mark,
@@ -1457,22 +1460,21 @@ html:not([data-theme="dark"]) .brand-logo-image {
     height: 36px;
   }
 }
-
+/* 
 @media (max-width: 560px) {
   .brand img,
   .brand-mark {
     width: auto;
-    height: 22px;
-    max-width: 44px;
+    height: 40px;
+    max-width: 100px;
     object-fit: contain;
   }
-
-
+*/
   .brand img,
   .brand-mark {
     width: auto;
-    height: 48px;
-    max-width: 115px;
+    height: 40px;
+    max-width: 100px;
     flex: 0 0 auto;
     object-fit: contain;
   }
