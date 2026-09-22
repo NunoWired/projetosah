@@ -1459,19 +1459,20 @@ html:not([data-theme="dark"]) .brand-logo-image {
 }
 
 @media (max-width: 560px) {
-  .brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    min-width: 0;
-    white-space: nowrap;
+  .brand img,
+  .brand-mark {
+    width: auto;
+    height: 40px;
+    max-width: 100px;
+    object-fit: contain;
   }
+
 
   .brand img,
   .brand-mark {
     width: auto;
     height: 48px;
-    max-width: 75px;
+    max-width: 115px;
     flex: 0 0 auto;
     object-fit: contain;
   }
