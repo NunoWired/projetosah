@@ -1460,7 +1460,7 @@ html:not([data-theme="dark"]) .brand-logo-image {
     height: 36px;
   }
 }
-/* 
+
 @media (max-width: 560px) {
   .brand img,
   .brand-mark {
@@ -1469,7 +1469,7 @@ html:not([data-theme="dark"]) .brand-logo-image {
     max-width: 100px;
     object-fit: contain;
   }
-*/
+
   .brand img,
   .brand-mark {
     width: auto;
