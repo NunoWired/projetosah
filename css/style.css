@@ -1428,8 +1428,10 @@ html:not([data-theme="dark"]) .brand-logo-image {
 }
 
 .brand img {
-  width: 52px;
-  height: 52px;
+  display: block;
+  width: 58px;
+  height: auto;
+  max-height: 54px;
   object-fit: contain;
 }
 
