@@ -1376,8 +1376,8 @@ html:not([data-theme="dark"]) .brand-logo-image {
 
 .google-maps-icon {
   display: block;
-  width: 92px;
-  height: 92px;
+  width: 82px;
+  height: 82px;
   margin: 28px 0 0 auto;
   object-fit: contain;
 }
@@ -1389,8 +1389,8 @@ html:not([data-theme="dark"]) .brand-logo-image {
 
 @media (max-width: 560px) {
   .google-maps-icon {
-    width: 64px;
-    height: 64px;
+    width: 54px;
+    height: 54px;
     margin-top: 6px;
     margin-bottom: 14px;
   }
