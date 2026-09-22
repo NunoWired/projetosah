@@ -1353,10 +1353,8 @@ html:not([data-theme="dark"]) .brand-logo-image {
   overflow: hidden;
   background-color: var(--terracotta);
   background-image:
-    linear-gradient(
-      rgba(194, 130, 103, 0.68),
-      rgba(194, 130, 103, 0.74)
-    ),
+    linear-gradient(rgba(194, 130, 103, 0.68),
+      rgba(194, 130, 103, 0.74)),
     url("../assets/images/bg_ingresso.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -1367,5 +1365,33 @@ html:not([data-theme="dark"]) .brand-logo-image {
   #ingressos {
     background-image: none;
     background-color: var(--terracotta);
+  }
+}
+
+.informese-location-link {
+  position: relative;
+}
+
+.google-maps-icon {
+  display: block;
+  width: 76px;
+  height: 76px;
+  margin: auto 0 18px auto;
+  object-fit: contain;
+  border-radius: 50%;
+  transition: transform .25s ease;
+}
+
+.informese-location-link:hover .google-maps-icon,
+.informese-location-link:focus-visible .google-maps-icon {
+  transform: scale(1.08);
+}
+
+@media (max-width: 560px) {
+  .google-maps-icon {
+    width: 64px;
+    height: 64px;
+    margin-top: 6px;
+    margin-bottom: 14px;
   }
 }
