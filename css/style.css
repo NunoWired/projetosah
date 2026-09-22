@@ -1354,8 +1354,8 @@ html:not([data-theme="dark"]) .brand-logo-image {
   background-color: var(--terracotta);
   background-image:
     linear-gradient(
-      rgba(35, 53, 77, 0.76),
-      rgba(35, 53, 77, 0.82)
+      rgba(194, 130, 103, 0.80),
+      rgba(194, 130, 103, 0.86)
     ),
     url("../assets/images/bg_ingresso.jpg");
   background-position: center;
