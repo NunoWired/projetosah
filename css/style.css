@@ -1362,3 +1362,10 @@ html:not([data-theme="dark"]) .brand-logo-image {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+@media (max-width: 560px) {
+  #ingressos {
+    background-image: none;
+    background-color: var(--terracotta);
+  }
+}
