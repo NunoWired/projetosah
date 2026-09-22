@@ -1413,8 +1413,35 @@ html:not([data-theme="dark"]) .brand-logo-image {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .informese-location-card:hover .google-maps-icon,
   .informese-location-link:focus-visible .google-maps-icon {
     animation: none;
+  }
+}
+
+.brand {
+  gap: 14px;
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 700;
+}
+
+.brand img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+@media (max-width: 560px) {
+  .brand {
+    gap: 9px;
+    font-size: 1.15rem;
+  }
+
+  .brand-mark,
+  .brand img {
+    width: 38px;
+    height: 38px;
   }
 }
