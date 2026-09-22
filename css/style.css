@@ -1397,7 +1397,7 @@ html:not([data-theme="dark"]) .brand-logo-image {
   }
 
   50% {
-    transform: scale(1.1);
+    transform: scale(1.25);
     opacity: 1;
   }
 }
@@ -1408,5 +1408,12 @@ html:not([data-theme="dark"]) .brand-logo-image {
     height: 54px;
     margin-top: 6px;
     margin-bottom: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .informese-location-card:hover .google-maps-icon,
+  .informese-location-link:focus-visible .google-maps-icon {
+    animation: none;
   }
 }
