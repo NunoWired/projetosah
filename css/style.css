@@ -1346,3 +1346,19 @@ html:not([data-theme="dark"]) .brand-logo-image {
     padding: 18px;
   }
 }
+
+#ingressos {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: var(--terracotta);
+  background-image:
+    linear-gradient(
+      rgba(35, 53, 77, 0.76),
+      rgba(35, 53, 77, 0.82)
+    ),
+    url("../assets/images/bg_ingresso.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
