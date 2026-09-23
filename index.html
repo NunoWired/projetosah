@@ -73,9 +73,16 @@
 
     <section id="inicio" class="hero" aria-labelledby="titulo-principal">
       <div class="mobile-video-background" aria-hidden="true">
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/GPXDwQQPo-M?autoplay=1&mute=1&loop=1&playlist=GPXDwQQPo-M&controls=0&playsinline=1&rel=0&modestbranding=1"
-          title="" allow="autoplay; encrypted-media" tabindex="-1"></iframe>
+        <video
+          class="hero-background-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          tabindex="-1">
+          <source src="assets/videos/video_inicio.mp4" type="video/mp4">
+          </video>
       </div>
 
       <div class="mobile-video-overlay" aria-hidden="true"></div>
@@ -146,17 +153,8 @@
       <div class="container">
         <div class="section-grid">
           <div>
-            <p class="eyebrow">Sobre o encontro</p>
             <h2 id="titulo-evento">Uma noite marcada pelo louvor</h2>
           </div>
-          
-          <!--
-          <div>
-            <p>Mais que um show, uma grande noite de louvor! Paulinho Sá celebrará sua caminhada na música católica
-              com a gravação do seu CD ao Vivo, com convidados especiais e músicas que marcaram sua história.</p>
-            <p>Garanta sua presença e viva essa experiência de perto.</p>
-          </div>
-        -->
 
         </div>
         <div class="sponsors-block" aria-labelledby="titulo-patrocinadores">
