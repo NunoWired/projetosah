@@ -1403,6 +1403,14 @@ html:not([data-theme="dark"]) .brand-logo-image {
   }
 }
 
+/* Ícone do Google Maps pulsando automaticamente quando visualizado por celulares */
+@media (max-width: 560px) {
+  .google-maps-icon {
+    animation: pulsar-maps 1.8s ease-in-out infinite;
+    transform-origin: center;
+  }
+}
+
 @media (max-width: 560px) {
   .google-maps-icon {
     width: 54px;
@@ -1413,7 +1421,7 @@ html:not([data-theme="dark"]) .brand-logo-image {
 }
 
 @media (prefers-reduced-motion: reduce) {
-
+  .google-maps-icon,
   .informese-location-card:hover .google-maps-icon,
   .informese-location-link:focus-visible .google-maps-icon {
     animation: none;
