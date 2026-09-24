@@ -1645,6 +1645,7 @@ select {
   }
 }
 
+/* Apoiadores de 2 em 2 na versão mobile */
 @media (max-width: 560px) {
   .sponsors-grid {
     display: grid;
@@ -1655,6 +1656,7 @@ select {
   .sponsor-card {
     min-width: 0;          /* evita estouro */
     aspect-ratio: 1 / 1;   /* deixa os cards quadrados; remova se não quiser */
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
