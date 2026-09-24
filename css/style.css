@@ -1584,25 +1584,29 @@ select {
 }
 
 /* Ícone do menu vira "X" quando aberto */
-@media (max-width: 992px) {
-  .menu-toggle span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: currentColor;
-    margin: 5px 0;
-    transition: transform 0.25s ease, opacity 0.25s ease;
-  }
+/* Estilo base das 3 barras do menu hambúrguer */
+.menu-toggle span {
+  display: block;
+  width: 24px;           /* ajuste se necessário */
+  height: 2px;
+  background: currentColor;
+  margin: 5px 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
 
-  .main-nav.is-open ~ .menu-toggle span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-  }
+/* Quando o menu está aberto (.is-open no .main-nav),
+   aplicamos a transformação no .menu-toggle */
+.main-nav.is-open ~ .menu-toggle span:nth-child(1),
+.menu-toggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
 
-  .main-nav.is-open ~ .menu-toggle span:nth-child(2) {
-    opacity: 0;
-  }
+.main-nav.is-open ~ .menu-toggle span:nth-child(2),
+.menu-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
 
-  .main-nav.is-open ~ .menu-toggle span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-  }
+.main-nav.is-open ~ .menu-toggle span:nth-child(3),
+.menu-toggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
