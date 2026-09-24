@@ -1815,3 +1815,64 @@ html:not([data-theme="dark"]) .brand-logo-image {
     background: currentColor;
   }
 }
+
+/* No desktop, o botão mobile fica completamente oculto */
+#theme-toggle-mobile {
+  display: none !important;
+}
+
+/* O botão desktop aparece normalmente */
+#theme-toggle {
+  display: grid;
+}
+
+@media screen and (max-width: 800px) {
+  /* No celular, o botão desktop desaparece */
+  .header-actions #theme-toggle {
+    display: none !important;
+  }
+
+  /* O botão mobile aparece somente dentro do menu aberto */
+  .main-nav #theme-toggle-mobile {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    z-index: 10;
+    display: grid !important;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    padding: 0;
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+  }
+}
+
+/* Ícone do botão de tema */
+#theme-toggle span::before,
+#theme-toggle-mobile span::before {
+  content: "☾";
+  display: block;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+[data-theme="dark"] #theme-toggle span::before,
+[data-theme="dark"] #theme-toggle-mobile span::before {
+  content: "☀";
+}
+
+/* Corrige o espaçamento do hamburguer */
+.menu-toggle {
+  gap: 0 !important;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 3px 0;
+  background: currentColor;
+}
