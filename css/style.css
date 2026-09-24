@@ -1892,7 +1892,7 @@ main > section:last-child {
 
 @media (min-width: 561px) {
   #realizacao {
-    min-height: 650px;
+    min-height: 750px;
     background-position: center center;
     background-image:
       linear-gradient(
