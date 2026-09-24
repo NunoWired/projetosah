@@ -995,7 +995,6 @@ select {
     object-fit: contain;
     opacity: 0.88;
   }
-}
 
 /* Logo exibida apenas dentro do menu mobile */
 .mobile-menu-logo {
@@ -1785,7 +1784,8 @@ main > section:last-child {
   width: 34px;
   height: 42px;
   transform: translateX(-50%);
-  pointer-events: none;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 .scroll-indicator span {
@@ -2074,4 +2074,8 @@ main > section:last-child {
   .mobile-menu-logo {
     display: none !important;
   }
+}
+
+.scroll-indicator:hover span {
+  border-color: var(--terracotta);
 }
