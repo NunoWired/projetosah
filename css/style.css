@@ -1207,16 +1207,10 @@ select {
   margin: 28px 0 0 auto;
   object-fit: contain;
   transform-origin: center;
-}
-
-.informese-location-card:hover .google-maps-icon,
-.informese-location-link:focus-visible .google-maps-icon {
   animation: pulsar-maps 1.8s ease-in-out infinite;
-  transform-origin: center;
 }
 
 @keyframes pulsar-maps {
-
   0%,
   100% {
     transform: scale(1);
@@ -1229,14 +1223,7 @@ select {
   }
 }
 
-/* Ícone do Google Maps pulsando automaticamente quando visualizado por celulares */
-@media (max-width: 560px) {
-  .google-maps-icon {
-    animation: pulsar-maps 1.8s ease-in-out infinite;
-    transform-origin: center;
-  }
-}
-
+/* Mantém o tamanho e espaçamento ajustados somente para mobile */
 @media (max-width: 560px) {
   .google-maps-icon {
     width: 54px;
@@ -1246,8 +1233,8 @@ select {
   }
 }
 
+/* Respeita usuários que preferem menos movimento */
 @media (prefers-reduced-motion: reduce) {
-
   .google-maps-icon,
   .informese-location-card:hover .google-maps-icon,
   .informese-location-link:focus-visible .google-maps-icon {
