@@ -1892,8 +1892,8 @@ main > section:last-child {
 
 @media (min-width: 561px) {
   #realizacao {
-    min-height: 750px;
-    background-position: center center;
+    min-height: 900px;
+    background-position: center bottom;
     background-image:
       linear-gradient(
         rgba(35, 53, 77, 0.15),
