@@ -4,9 +4,7 @@ const currentYear = document.querySelector('#current-year');
 const ticketForm = document.querySelector('#ticket-form');
 const newsletterForm = document.querySelector('#newsletter-form');
 const backToTopButton = document.querySelector('#back-to-top');
-const themeToggles = document.querySelectorAll(
-  '#theme-toggle, #theme-toggle-mobile'
-);
+const themeToggles = document.querySelectorAll('#theme-toggle, #theme-toggle-mobile');
 
 function updateThemeButtons(isDark) {
   themeToggles.forEach((button) => {
@@ -23,20 +21,20 @@ function updateThemeButtons(isDark) {
 }
 
 const savedTheme = localStorage.getItem('theme');
+const isDark = savedTheme === 'dark';
 
-if (savedTheme === 'dark') {
+if (isDark) {
   document.documentElement.setAttribute('data-theme', 'dark');
-  updateThemeButtons(true);
-} else {
-  updateThemeButtons(false);
 }
+
+updateThemeButtons(isDark);
 
 themeToggles.forEach((button) => {
   button.addEventListener('click', () => {
-    const isDark =
+    const nextIsDark =
       document.documentElement.getAttribute('data-theme') !== 'dark';
 
-    if (isDark) {
+    if (nextIsDark) {
       document.documentElement.setAttribute('data-theme', 'dark');
       localStorage.setItem('theme', 'dark');
     } else {
@@ -44,7 +42,7 @@ themeToggles.forEach((button) => {
       localStorage.setItem('theme', 'light');
     }
 
-    updateThemeButtons(isDark);
+    updateThemeButtons(nextIsDark);
   });
 });
 

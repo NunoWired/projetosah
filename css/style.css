@@ -1597,3 +1597,64 @@ html:not([data-theme="dark"]) .brand-logo-image {
     position: fixed;
   }
 }
+
+/* Alinha o menu hamburguer à direita e mantém o botão de tema dentro do menu */
+@media screen and (max-width: 800px) {
+  .header-content {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-toggle {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .header-actions {
+    display: none;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 76px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+  }
+
+  .theme-toggle-mobile {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    z-index: 3;
+    display: grid;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
+
+/* Ícones do botão mobile: lua no tema claro e sol no tema escuro */
+#theme-toggle-mobile span::before {
+  content: "☾";
+  display: block;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+[data-theme="dark"] #theme-toggle-mobile span::before {
+  content: "☀";
+}
+
+/* O botão de tema do cabeçalho não aparece no celular */
+@media screen and (max-width: 800px) {
+  .header-actions .theme-toggle {
+    display: none;
+  }
+}
