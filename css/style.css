@@ -1584,8 +1584,18 @@ select {
 
 /* Diminuir o espaço entre o fim da barra inicial e o conteúdo do site */
 @media (max-width: 560px) {
-  .hero-content {
-    margin-top: 0;
-    padding-top: 0;
+  html,
+  body,
+  main,
+  #conteudo,
+  #inicio,
+  .hero {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* Se houver um spacer ou header fixo, compensa apenas o necessário */
+  body {
+    padding-top: 60px; /* ajuste este valor conforme a altura do seu menu */
   }
 }
