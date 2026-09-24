@@ -1584,29 +1584,64 @@ select {
 }
 
 /* Ícone do menu vira "X" quando aberto */
-/* Estilo base das 3 barras do menu hambúrguer */
+/* Mantém as 3 barras originais inalteradas */
 .menu-toggle span {
   display: block;
   width: 24px;
   height: 2px;
   background: currentColor;
   margin: 4px 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Linhas que formarão o X */
+.menu-toggle::before,
+.menu-toggle::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 24px;      /* mesmo largura das barras */
+  height: 2px;
+  background: currentColor;
+  transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 0;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-/* Quando o menu está aberto */
-.main-nav.is-open ~ .menu-toggle span:nth-child(1),
-.menu-toggle.is-open span:nth-child(1) {
-  transform: translateY(4px) rotate(45deg);
+/* Primeira linha do X (45°) */
+.menu-toggle::before {
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.main-nav.is-open ~ .menu-toggle span:nth-child(2),
-.menu-toggle.is-open span:nth-child(2) {
+/* Segunda linha do X (-45°) */
+.menu-toggle::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Quando o menu está aberto, mostra o X e esconde as barras originais */
+.main-nav.is-open ~ .menu-toggle span,
+.menu-toggle.is-open span {
   opacity: 0;
-  transform: scaleX(0);
 }
 
-.main-nav.is-open ~ .menu-toggle span:nth-child(3),
-.menu-toggle.is-open span:nth-child(3) {
-  transform: translateY(-4px) rotate(-45deg);
+.main-nav.is-open ~ .menu-toggle::before,
+.menu-toggle.is-open::before {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.main-nav.is-open ~ .menu-toggle::after,
+.menu-toggle.is-open::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Garante que o botão seja posicionado relativo para o ::before/::after */
+.menu-toggle {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
