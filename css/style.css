@@ -1585,6 +1585,7 @@ select {
 /* Diminuir o espaço entre o fim da barra inicial e o conteúdo do site */
 @media (max-width: 560px) {
   .hero {
-    padding-top: 40px;   /* reduza este valor conforme necessário: 30px, 20px, etc. */
+    padding-top: 20px;
+    min-height: 60vh;    /* ou um valor menor, ex.: 50vh */
   }
 }
