@@ -1719,15 +1719,8 @@ html:not([data-theme="dark"]) .brand-logo-image {
 }
 
 @media screen and (max-width: 560px) {
-  .brand-name {
-    font-size: 1.40rem !important;
-    white-space: nowrap;
-  }
-}
-
-@media screen and (max-width: 560px) {
   .site-header .brand .brand-name {
-    font-size: 1.35rem !important;
+    font-size: 1.50rem !important;
     line-height: 1;
   }
 }
