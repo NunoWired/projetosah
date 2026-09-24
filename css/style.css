@@ -1642,15 +1642,11 @@ html:not([data-theme="dark"]) .brand-logo-image {
 
 /* Ícones do botão mobile: lua no tema claro e sol no tema escuro */
 #theme-toggle-mobile span::before {
-  content: "☾";
   display: block;
   font-size: 1.35rem;
   line-height: 1;
 }
 
-[data-theme="dark"] #theme-toggle-mobile span::before {
-  content: "☀";
-}
 
 /* O botão de tema do cabeçalho não aparece no celular */
 @media screen and (max-width: 800px) {
@@ -1723,4 +1719,31 @@ html:not([data-theme="dark"]) .brand-logo-image {
     font-size: 1.50rem !important;
     line-height: 1;
   }
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 4px 0;
+  background: currentColor;
+}
+
+.theme-toggle-mobile span {
+  display: block;
+  width: auto;
+  height: auto;
+  margin: 0;
+  background: transparent;
+}
+
+.theme-toggle-mobile span::before {
+  content: "☾";
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+[data-theme="dark"] .theme-toggle-mobile span::before {
+  content: "☀";
 }
