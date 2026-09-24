@@ -1801,16 +1801,91 @@ main > section:last-child {
     background-image:
       linear-gradient(
         90deg,
-        rgba(45, 64, 91, 0.86) 0%,
-        rgba(45, 64, 91, 0.74) 16%,
-        rgba(45, 64, 91, 0.56) 30%,
-        rgba(45, 64, 91, 0.30) 43%,
-        rgba(45, 64, 91, 0) 75%
+        rgba(45, 64, 91, 0.25) 0%,
+        rgba(45, 64, 91, 0.25) 16%,
+        rgba(45, 64, 91, 0.25) 30%,
+        rgba(45, 64, 91, 0.25) 43%,
+        rgba(45, 64, 91, 0) 100%
       ),
       url("../assets/images/imagem_banner.jpg");
 
     background-position: right center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+}
+
+/* Indicador animado para continuar rolando a página */
+.scroll-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  width: 34px;
+  height: 42px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.scroll-indicator span {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-right: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
+  transform: rotate(45deg);
+  opacity: 0;
+  animation: scroll-arrow 1.8s ease-in-out infinite;
+}
+
+/* A segunda seta entra na animação um pouco depois */
+.scroll-indicator span:nth-child(2) {
+  margin-top: -7px;
+  animation-delay: 0.2s;
+}
+
+@keyframes scroll-arrow {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateY(-5px) rotate(45deg);
+  }
+
+  25% {
+    opacity: 0.95;
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(5px) rotate(45deg);
+  }
+
+  75% {
+    opacity: 0.5;
+  }
+}
+
+/* Ajuste da posição no celular */
+@media (max-width: 560px) {
+  .scroll-indicator {
+    bottom: 18px;
+  }
+
+  .scroll-indicator span {
+    width: 14px;
+    height: 14px;
+    border-width: 2px;
+  }
+}
+
+/* Respeita usuários que preferem menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-indicator span {
+    animation: none;
+    opacity: 0.9;
   }
 }
