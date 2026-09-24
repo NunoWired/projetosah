@@ -1666,3 +1666,30 @@ select {
     width: calc((100% - 12px) / 2);
   }
 }
+
+/* 20 anos de Louvor com efeito de pulsação */
+.hero-louvor-pulse {
+  display: inline-block;
+  transform-origin: center;
+  animation: pulse-louvor 2.8s ease-in-out infinite;
+}
+
+@keyframes pulse-louvor {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.035);
+    opacity: 0.9;
+  }
+}
+
+/* Respeita pessoas que preferem menos animação */
+@media (prefers-reduced-motion: reduce) {
+  .hero-louvor-pulse {
+    animation: none;
+  }
+}
