@@ -96,6 +96,22 @@
 
   <main id="conteudo">
     <section id="inicio" class="hero" aria-labelledby="titulo-principal">
+
+      <!-- Vídeo de fundo para desktop -->
+      <div class="desktop-video-background" aria-hidden="true">
+        <video
+          class="hero-background-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          tabindex="-1"
+        >
+          <source src="assets/videos/inicio_desktop.mp4" type="video/mp4">
+        </video>
+      </div>
+
       <div class="mobile-video-background" aria-hidden="true">
         <video
           class="hero-background-video"
@@ -106,7 +122,7 @@
           preload="metadata"
           tabindex="-1"
         >
-          <source src="assets/videos/video_inicio.mp4" type="video/mp4">
+          <source src="assets/videos/inicio_mobile.mp4" type="video/mp4">
         </video>
       </div>
 
