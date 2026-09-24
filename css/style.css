@@ -1581,7 +1581,7 @@ select {
 
 /* Ícone do menu vira "X" quando aberto */
 /* Mantém as 3 barras originais inalteradas */
-@media (max-width: 992px) {
+@media (max-width: 800px) {
   .menu-toggle span {
     display: block;
     width: 24px;
