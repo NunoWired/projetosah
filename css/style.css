@@ -1596,6 +1596,6 @@ select {
 
   /* Se houver um spacer ou header fixo, compensa apenas o necessário */
   body {
-    padding-top: 60px; /* ajuste este valor conforme a altura do seu menu */
+    padding-top: 10px; /* ajuste este valor conforme a altura do seu menu */
   }
 }
