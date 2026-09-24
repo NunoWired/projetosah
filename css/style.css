@@ -1566,10 +1566,18 @@ select {
   }
 }
 
-/* Tamanho da logo no título da primeira sessão para mobile */
+/* Tamanho da logo no título da primeira sessão para mobile e centralizada na horizontal */
 @media (max-width: 560px) {
+  #titulo-principal {
+    align-items: center;
+    text-align: center;
+  }
+
   .hero-title-logo {
-    width: min(333px, 100%);
-    max-height: 100px;
+    display: block;
+    width: min(350px, 100%);
+    max-height: 125px;
+    margin-inline: auto;
+    object-position: center;
   }
 }
