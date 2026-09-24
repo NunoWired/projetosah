@@ -1699,7 +1699,7 @@ html:not([data-theme="dark"]) .brand-logo-image {
     max-width: calc(100vw - 190px);
     overflow: hidden;
     color: var(--terracotta) !important;
-    font-size: 1.85rem;
+    font-size: 2rem;
     line-height: 1;
     text-align: center;
     text-overflow: ellipsis;
