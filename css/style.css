@@ -1801,13 +1801,16 @@ main > section:last-child {
     background-image:
       linear-gradient(
         90deg,
-        var(--surface-alt) 0%,
-        var(--surface-alt) 25%,
-        color-mix(in srgb, var(--surface-alt) 75%, transparent) 42%,
-        transparent 58%
+        transparent 0%,
+        transparent 45%,
+        color-mix(in srgb, var(--surface-alt) 35%, transparent) 60%,
+        color-mix(in srgb, var(--surface-alt) 12%, transparent) 78%,
+        transparent 100%
       ),
       url("../assets/images/imagem_banner.jpg");
 
     background-position: right center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
