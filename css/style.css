@@ -1746,13 +1746,13 @@ main > section:last-child {
 #realizacao {
   position: relative;
   isolation: isolate;
-  min-height: 450px;
-  display: flex;
-  align-items: center;
   background-image:
     linear-gradient(
-      rgba(35, 53, 77, 0.76),
-      rgba(35, 53, 77, 0.84)
+      90deg,
+      var(--surface-alt) 0%,
+      var(--surface-alt) 25%,
+      color-mix(in srgb, var(--surface-alt) 75%, transparent) 42%,
+      transparent 58%
     ),
     url("../assets/images/imagem_banner.jpg");
   background-position: center;
