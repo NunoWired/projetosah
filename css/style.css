@@ -1573,3 +1573,27 @@ html:not([data-theme="dark"]) .brand-logo-image {
 .hero #titulo-principal {
   color: var(--terracotta) !important;
 }
+
+@media (max-width: 800px) {
+  .header-actions .theme-toggle {
+    display: none;
+  }
+}
+
+.theme-toggle-mobile {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .theme-toggle-mobile {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    z-index: 2;
+    display: grid;
+  }
+
+  .main-nav {
+    position: fixed;
+  }
+}

@@ -4,6 +4,49 @@ const currentYear = document.querySelector('#current-year');
 const ticketForm = document.querySelector('#ticket-form');
 const newsletterForm = document.querySelector('#newsletter-form');
 const backToTopButton = document.querySelector('#back-to-top');
+const themeToggles = document.querySelectorAll(
+  '#theme-toggle, #theme-toggle-mobile'
+);
+
+function updateThemeButtons(isDark) {
+  themeToggles.forEach((button) => {
+    button.setAttribute('aria-pressed', String(isDark));
+    button.setAttribute(
+      'aria-label',
+      isDark ? 'Ativar tema claro' : 'Ativar tema escuro'
+    );
+    button.setAttribute(
+      'title',
+      isDark ? 'Ativar tema claro' : 'Ativar tema escuro'
+    );
+  });
+}
+
+const savedTheme = localStorage.getItem('theme');
+
+if (savedTheme === 'dark') {
+  document.documentElement.setAttribute('data-theme', 'dark');
+  updateThemeButtons(true);
+} else {
+  updateThemeButtons(false);
+}
+
+themeToggles.forEach((button) => {
+  button.addEventListener('click', () => {
+    const isDark =
+      document.documentElement.getAttribute('data-theme') !== 'dark';
+
+    if (isDark) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+    }
+
+    updateThemeButtons(isDark);
+  });
+});
 
 if (currentYear) {
   currentYear.textContent = new Date().getFullYear();

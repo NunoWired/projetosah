@@ -28,11 +28,51 @@
         </span>
         <span class="brand-name">Gravação do Show</span>
       </a>
-
-      <button class="menu-toggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false"
+<!--
+      <button
+        class="menu-toggle"
+        type="button" aria-label="Abrir menu de navegação" aria-expanded="false"
         aria-controls="menu-principal"><span></span><span></span><span></span></button>
 
       <nav id="menu-principal" class="main-nav" aria-label="Navegação principal">
+        <button
+          id="theme-toggle"
+          class="theme-toggle"
+          type="button"
+          aria-label="Ativar tema escuro"
+          aria-pressed="false"
+          title="Ativar tema escuro">
+          <span aria-hidden="true"></span>
+        </button>
+      -->
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menu de navegação"
+        aria-expanded="false"
+        aria-controls="menu-principal">
+
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav
+        id="menu-principal"
+        class="main-nav"
+        aria-label="Navegação principal">
+      <!-- Botão exibido no menu mobile -->
+      <button
+        id="theme-toggle-mobile"
+        class="theme-toggle theme-toggle-mobile"
+        type="button"
+        aria-label="Ativar tema escuro"
+        aria-pressed="false"
+        title="Ativar tema escuro">
+        <span aria-hidden="true"></span>
+      </button>
+
         <a href="#informese">Informe-se</a>
         <a href="#evento">Apoio</a>
         <a href="#ingressos">Ingressos</a>
@@ -64,9 +104,17 @@
 
       </nav>
 
-      <div class="header-actions"><a class="button button-small" href="#ingressos">Comprar ingresso</a><button
-          id="theme-toggle" class="theme-toggle" type="button" aria-label="Ativar tema escuro" aria-pressed="false"
-          title="Ativar tema escuro"><span aria-hidden="true">☀</span></button></div>
+      <div class="header-actions"><a class="button button-small" href="#ingressos">Comprar ingresso</a>
+        <button
+          id="theme-toggle"
+          class="theme-toggle"
+          type="button"
+          aria-label="Ativar tema escuro"
+          aria-pressed="false"
+          title="Ativar tema escuro">
+          <span aria-hidden="true">☀</span>
+        </button>
+      </div>
     </div>
   </header>
   <main id="conteudo">
