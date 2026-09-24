@@ -1682,7 +1682,7 @@ select {
   }
 
   50% {
-    transform: scale(1.035);
+    transform: scale(1.050);
     opacity: 0.9;
   }
 }
