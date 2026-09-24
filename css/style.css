@@ -1438,7 +1438,7 @@ html:not([data-theme="dark"]) .brand-logo-image {
 .brand-name {
   font-family: var(--font-display);
   font-size: 1.55rem;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1;
   white-space: nowrap;
 }
@@ -1560,4 +1560,8 @@ html:not([data-theme="dark"]) .brand-logo-image {
     position: relative;
     z-index: 2;
   }
+}
+
+#titulo-principal {
+  color: var(#c28267);
 }
