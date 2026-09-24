@@ -1419,6 +1419,7 @@ select {
     font-size: 1.25rem !important;
     line-height: 1;
     white-space: nowrap;
+    color: #ffffff !important;
   }
 }
 
