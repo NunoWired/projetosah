@@ -1561,3 +1561,11 @@ html:not([data-theme="dark"]) .brand-logo-image {
     z-index: 2;
   }
 }
+
+@media screen and (max-width: 560px) {
+  .site-header .brand-name {
+    font-size: 1.15rem !important;
+    line-height: 1;
+    white-space: nowrap;
+  }
+}
