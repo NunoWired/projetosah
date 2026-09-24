@@ -4,10 +4,7 @@ const currentYear = document.querySelector('#current-year');
 const ticketForm = document.querySelector('#ticket-form');
 const newsletterForm = document.querySelector('#newsletter-form');
 const backToTopButton = document.querySelector('#back-to-top');
-
-const themeToggles = document.querySelectorAll(
-  '#theme-toggle, #theme-toggle-mobile'
-);
+const themeToggles = document.querySelectorAll('#theme-toggle, #theme-toggle-mobile');
 
 function updateThemeButtons(isDark) {
   themeToggles.forEach((button) => {
