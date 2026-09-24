@@ -12,6 +12,8 @@ if (currentYear) {
 menuToggle?.addEventListener('click', () => {
   const isOpen = mainNav?.classList.toggle('is-open');
 
+  menuToggle?.classList.toggle('is-open', isOpen);
+
   menuToggle.setAttribute('aria-expanded', String(isOpen));
 
   menuToggle.setAttribute(
