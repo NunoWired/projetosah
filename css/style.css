@@ -1890,7 +1890,6 @@ main > section:last-child {
   }
 }
 
-@media (min-width: 561px) {
   #realizacao {
     min-height: 900px;
     background-position: center bottom;
@@ -1901,4 +1900,3 @@ main > section:last-child {
       ),
       url("../assets/images/imagem_banner.jpg") !important;
   }
-}
