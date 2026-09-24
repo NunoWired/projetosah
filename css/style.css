@@ -2042,3 +2042,36 @@ main > section:last-child {
     z-index: 2;
   }
 }
+
+/* Camada de degradê sobre o vídeo do hero no desktop */
+@media (min-width: 561px) {
+  .desktop-video-background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      rgba(35, 53, 77, 0.93) 0%,
+      rgba(35, 53, 77, 0.78) 55%,
+      rgba(35, 53, 77, 0.48) 100%
+    );
+  }
+
+  .desktop-video-background .hero-background-video {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+}
+/* A logo interna do menu aparece somente quando o menu mobile é exibido */
+@media (min-width: 801px) {
+  .mobile-menu-logo {
+    display: none !important;
+  }
+}
