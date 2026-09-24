@@ -1211,7 +1211,8 @@ select {
 
 .informese-location-card:hover .google-maps-icon,
 .informese-location-link:focus-visible .google-maps-icon {
-  animation: pulsar-maps 1.6s ease-in-out infinite;
+  animation: pulsar-maps 1.8s ease-in-out infinite;
+  transform-origin: center;
 }
 
 @keyframes pulsar-maps {
