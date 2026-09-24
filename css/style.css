@@ -1746,6 +1746,9 @@ main > section:last-child {
 #realizacao {
   position: relative;
   isolation: isolate;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
   background-image:
     linear-gradient(
       rgba(35, 53, 77, 0.76),
@@ -1761,4 +1764,10 @@ main > section:last-child {
 #realizacao h2,
 #realizacao .eyebrow {
   color: #ffffff;
+}
+
+@media (max-width: 560px) {
+  #realizacao {
+    background-position: right center;
+  }
 }
