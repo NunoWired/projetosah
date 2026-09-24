@@ -117,7 +117,6 @@ h3 {
 .site-header {
   position: sticky;
   top: 0;
-  padding-top: 0 !important;
   z-index: 100;
   background: color-mix(in srgb, var(--background) 94%, transparent);
   border-bottom: 1px solid var(--border);
@@ -1487,7 +1486,7 @@ select {
     display: block;
     max-width: calc(100vw - 190px);
     overflow: hidden;
-    color: var(--terracotta) !important;
+    color: var(#ffffff) !important;
     font-size: 1.75rem;
     line-height: 1;
     text-align: center;
