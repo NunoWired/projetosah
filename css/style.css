@@ -1751,8 +1751,8 @@ main > section:last-child {
   align-items: center;
   background-image:
     linear-gradient(
-      rgba(35, 53, 77, 0.76),
-      rgba(35, 53, 77, 0.84)
+      rgba(35, 53, 77, 0.15),
+      rgba(35, 53, 77, 0.10)
     ),
     url("../assets/images/imagem_banner.jpg");
   background-position: center;
@@ -1887,5 +1887,16 @@ main > section:last-child {
   .scroll-indicator span {
     animation: none;
     opacity: 0.9;
+  }
+}
+
+@media (min-width: 561px) {
+  #realizacao {
+    background-image:
+      linear-gradient(
+        rgba(35, 53, 77, 0.15),
+        rgba(35, 53, 77, 0.10)
+      ),
+      url("../assets/images/imagem_banner.jpg") !important;
   }
 }
