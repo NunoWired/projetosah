@@ -1699,7 +1699,7 @@ html:not([data-theme="dark"]) .brand-logo-image {
     max-width: calc(100vw - 190px);
     overflow: hidden;
     color: var(--terracotta) !important;
-    font-size: 2rem;
+    font-size: 1.75rem;
     line-height: 1;
     text-align: center;
     text-overflow: ellipsis;
@@ -1711,5 +1711,16 @@ html:not([data-theme="dark"]) .brand-logo-image {
     position: relative;
     z-index: 3;
     margin-left: auto;
+  }
+}
+
+.brand-name {
+  font-size: 2.0rem;
+}
+
+@media screen and (max-width: 560px) {
+  .brand-name {
+    font-size: 1.40rem !important;
+    white-space: nowrap;
   }
 }
