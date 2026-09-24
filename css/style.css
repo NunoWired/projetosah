@@ -1670,6 +1670,9 @@ html:not([data-theme="dark"]) .brand-logo-image {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    max-width: calc(100vw - 190px);
+    overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
     text-align: center;
   }
