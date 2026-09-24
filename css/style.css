@@ -5,23 +5,16 @@
   --beige: #dbcbba;
   --off-white: #f2f2f2;
   --terracotta: #c28267;
-  --text: var(--navy);
-  --background: var(--off-white);
-  --surface: #ffffff;
-  --surface-alt: #e8e8e8;
-  --border: #d3d7da;
-  --shadow: 0 14px 34px rgba(35, 53, 77, 0.12);
-  --font-body: "Montserrat", Arial, sans-serif;
-  --font-display: "Playfair Display", Georgia, serif;
-}
 
-[data-theme="dark"] {
   --text: #f2f2f2;
   --background: #182333;
   --surface: #23354d;
   --surface-alt: #2d405b;
   --border: #4c6077;
-  --shadow: 0 14px 34px rgba(0, 0, 0, .28);
+
+  --shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+  --font-body: "Montserrat", Arial, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
 }
 
 * {
@@ -39,7 +32,6 @@ body {
   color: var(--text);
   font-family: var(--font-body);
   line-height: 1.6;
-  transition: background .25s, color .25s;
 }
 
 a {
@@ -191,31 +183,6 @@ h3 {
   gap: 10px;
 }
 
-.theme-toggle,
-.menu-toggle {
-  border: 0;
-  color: var(--text);
-  background: transparent;
-  cursor: pointer;
-}
-
-.theme-toggle {
-  display: grid;
-  width: 40px;
-  height: 40px;
-  place-items: center;
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  font-size: 1.15rem;
-  line-height: 1;
-  transition: background .25s, transform .2s;
-}
-
-.theme-toggle:hover {
-  background: var(--surface-alt);
-  transform: rotate(12deg);
-}
-
 .menu-toggle {
   display: none;
 }
@@ -258,12 +225,6 @@ h3 {
   color: #fff;
   background: var(--navy);
   border-color: var(--navy);
-}
-
-[data-theme="dark"] .button-outline:hover {
-  color: var(--navy);
-  background: var(--off-white);
-  border-color: var(--off-white);
 }
 
 .button-full {
@@ -392,11 +353,6 @@ h3 {
   outline-offset: 4px;
 }
 
-[data-theme="dark"] .sponsor-card {
-  background: #f2f2f2;
-  border-color: rgba(242, 242, 242, .28);
-}
-
 #informese {
   background: var(--surface-alt);
 }
@@ -418,19 +374,6 @@ h3 {
 
 .informese-card h3 {
   color: var(--terracotta);
-}
-
-.informese-location-card {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-  background: #f2f2f2 url("../assets/images/mapa-claro.jpg") center/cover no-repeat;
-  background-blend-mode: soft-light;
-}
-
-[data-theme="dark"] .informese-location-card {
-  background-color: var(--navy);
-  background-image: linear-gradient(rgba(35, 53, 77, .78), rgba(35, 53, 77, .90)), url("../assets/images/mapa-escuro.jpg");
 }
 
 .informese-location-link {
@@ -807,14 +750,6 @@ select {
   }
 }
 
-html:not([data-theme="dark"]) .brand-title {
-  color: var(--navy) !important;
-}
-
-[data-theme="dark"] .brand-title {
-  color: #ffffff !important;
-}
-
 .back-to-top {
   position: fixed;
   right: 24px;
@@ -859,17 +794,6 @@ html:not([data-theme="dark"]) .brand-title {
   outline-offset: 4px;
 }
 
-[data-theme="dark"] .back-to-top {
-  color: var(--navy);
-  background: var(--off-white);
-  border-color: var(--off-white);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
-}
-
-[data-theme="dark"] .back-to-top:hover {
-  background: var(--beige);
-}
-
 @media (max-width: 560px) {
   .back-to-top {
     right: 16px;
@@ -881,38 +805,6 @@ html:not([data-theme="dark"]) .brand-title {
 
 .sponsors-title {
   color: var(--text) !important;
-  transition: color 0.25s ease;
-}
-
-[data-theme="dark"] .sponsors-title {
-  color: #ffffff !important;
-}
-
-.informese-location-card {
-  background-color: #f2f2f2 !important;
-  background-image:
-    linear-gradient(rgba(242, 242, 242, 0.72),
-      rgba(242, 242, 242, 0.84)),
-    url("../assets/images/mapa-claro.jpg") !important;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-html:not([data-theme="dark"]) .informese-location-card {
-  background-color: #f2f2f2 !important;
-  background-image:
-    linear-gradient(rgba(242, 242, 242, 0.72),
-      rgba(242, 242, 242, 0.84)),
-    url("../assets/images/mapa-claro.jpg") !important;
-}
-
-[data-theme="dark"] .informese-location-card {
-  background-color: var(--navy) !important;
-  background-image:
-    linear-gradient(rgba(35, 53, 77, 0.78),
-      rgba(35, 53, 77, 0.90)),
-    url("../assets/images/mapa-escuro.jpg") !important;
 }
 
 .brand-title {
@@ -925,17 +817,6 @@ html:not([data-theme="dark"]) .informese-location-card {
   letter-spacing: 0;
   white-space: nowrap;
   transform: none;
-  transition: color 0.25s ease;
-}
-
-/* Tema escuro */
-[data-theme="dark"] .brand-title {
-  color: #ffffff;
-}
-
-/* Tema claro */
-html:not([data-theme="dark"]) .brand-title {
-  color: var(--navy);
 }
 
 @media (max-width: 800px) {
@@ -966,16 +847,6 @@ html:not([data-theme="dark"]) .brand-title {
   width: 100%;
   height: 100%;
   object-fit: contain;
-}
-
-/* Tema claro */
-html:not([data-theme="dark"]) .brand-logo-image {
-  content: url("../assets/images/logo-tema-claro.png");
-}
-
-/* Tema escuro */
-[data-theme="dark"] .brand-logo-image {
-  content: url("../assets/images/logo-tema-escuro.png");
 }
 
 @media (max-width: 560px) {
@@ -1188,10 +1059,6 @@ html:not([data-theme="dark"]) .brand-logo-image {
     object-fit: contain;
     opacity: 0.88;
   }
-
-  [data-theme="dark"] .mobile-menu-logo img {
-    opacity: 1;
-  }
 }
 
 /* Logo exibida apenas dentro do menu mobile */
@@ -1214,17 +1081,6 @@ html:not([data-theme="dark"]) .brand-logo-image {
     max-height: 100px;
     object-fit: contain;
     opacity: 0.9;
-  }
-
-  /* Tema claro */
-  html:not([data-theme="dark"]) .mobile-menu-logo-image {
-    content: url("../assets/images/logo-tema-claro.png");
-  }
-
-  /* Tema escuro */
-  [data-theme="dark"] .mobile-menu-logo-image {
-    content: url("../assets/images/logo-tema-escuro.png");
-    opacity: 1;
   }
 }
 
@@ -1418,6 +1274,22 @@ html:not([data-theme="dark"]) .brand-logo-image {
   }
 }
 
+.informese-location-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: var(--navy);
+  background-image:
+    linear-gradient(
+      rgba(35, 53, 77, 0.78),
+      rgba(35, 53, 77, 0.90)
+    ),
+    url("../assets/images/mapa-escuro.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -1574,30 +1446,6 @@ html:not([data-theme="dark"]) .brand-logo-image {
   color: var(--terracotta) !important;
 }
 
-@media (max-width: 800px) {
-  .header-actions .theme-toggle {
-    display: none;
-  }
-}
-
-.theme-toggle-mobile {
-  display: none;
-}
-
-@media (max-width: 800px) {
-  .theme-toggle-mobile {
-    position: absolute;
-    top: 18px;
-    right: 20px;
-    z-index: 2;
-    display: grid;
-  }
-
-  .main-nav {
-    position: fixed;
-  }
-}
-
 /* Alinha o menu hamburguer à direita e mantém o botão de tema dentro do menu */
 @media screen and (max-width: 800px) {
   .header-content {
@@ -1621,29 +1469,6 @@ html:not([data-theme="dark"]) .brand-logo-image {
     bottom: 0;
     left: 0;
     z-index: 99;
-  }
-
-  .theme-toggle-mobile {
-    position: absolute;
-    top: 18px;
-    right: 22px;
-    z-index: 3;
-    display: grid;
-    width: 48px;
-    height: 48px;
-    place-items: center;
-    color: var(--text);
-    background: transparent;
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    cursor: pointer;
-  }
-}
-
-/* O botão de tema do cabeçalho não aparece no celular */
-@media screen and (max-width: 800px) {
-  .header-actions .theme-toggle {
-    display: none;
   }
 }
 
@@ -1734,32 +1559,6 @@ html:not([data-theme="dark"]) .brand-logo-image {
   background: currentColor;
 }
 
-/* Botão de tema: somente o símbolo de lua/sol */
-.theme-toggle-mobile {
-  position: absolute;
-  top: 18px;
-  right: 22px;
-  z-index: 10;
-  display: grid;
-  width: 48px;
-  height: 48px;
-  place-items: center;
-  padding: 0;
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  color: var(--text);
-  background: transparent;
-  cursor: pointer;
-}
-
-.theme-toggle-mobile span {
-  display: block;
-  width: auto;
-  height: auto;
-  margin: 0;
-  background: transparent;
-}
-
 /* No celular, mostra o hamburguer */
 @media screen and (max-width: 800px) {
   .menu-toggle {
@@ -1793,40 +1592,6 @@ html:not([data-theme="dark"]) .brand-logo-image {
   }
 }
 
-/* No desktop, o botão mobile fica completamente oculto */
-#theme-toggle-mobile {
-  display: none !important;
-}
-
-@media screen and (max-width: 800px) {
-  /* No celular, o botão desktop desaparece */
-  /*.header-actions*/ 
-  #theme-toggle {
-    display: none !important;
-  }
-
-  #theme-toggle-mobile {
-    display: grid !important;
-  }
-
-  /* O botão mobile aparece somente dentro do menu aberto */
-  .main-nav #theme-toggle-mobile {
-    position: absolute;
-    top: 18px;
-    right: 22px;
-    z-index: 10;
-    display: grid !important;
-    width: 48px;
-    height: 48px;
-    place-items: center;
-    padding: 0;
-    color: var(--text);
-    background: transparent;
-    border: 1px solid var(--border);
-    border-radius: 50%;
-  }
-}
-
 /* Corrige o espaçamento do hamburguer */
 .menu-toggle {
   gap: 0 !important;
@@ -1840,17 +1605,30 @@ html:not([data-theme="dark"]) .brand-logo-image {
   background: currentColor;
 }
 
-/* O único ícone usado pelos dois botões */
-#theme-toggle span::before,
-#theme-toggle-mobile span::before {
-  content: "☾" !important;
-  display: block !important;
-  font-size: 1.35rem;
-  line-height: 1;
+.menu-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  color: var(--text);
+  background: transparent;
+  cursor: pointer;
 }
 
-/* No tema escuro, o único ícone passa a ser o sol */
-[data-theme="dark"] #theme-toggle span::before,
-[data-theme="dark"] #theme-toggle-mobile span::before {
-  content: "☀" !important;
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 3px 0;
+  background: currentColor;
+}
+
+@media screen and (max-width: 800px) {
+  .menu-toggle {
+    display: grid;
+    place-content: center;
+    gap: 0;
+    margin-left: auto;
+  }
 }
