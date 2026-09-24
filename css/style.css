@@ -1648,10 +1648,6 @@ html:not([data-theme="dark"]) .brand-logo-image {
   line-height: 1;
 }
 
-[data-theme="dark"] #theme-toggle-mobile span::before {
-  content: "☀";
-}
-
 /* O botão de tema do cabeçalho não aparece no celular */
 @media screen and (max-width: 800px) {
   .header-actions .theme-toggle {
@@ -1777,10 +1773,6 @@ html:not([data-theme="dark"]) .brand-logo-image {
   display: block;
   font-size: 1.5rem;
   line-height: 1;
-}
-
-[data-theme="dark"] .theme-toggle-mobile span::before {
-  content: "☀";
 }
 
 /* No celular, mostra o hamburguer */
