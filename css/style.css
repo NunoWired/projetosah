@@ -1693,3 +1693,12 @@ select {
     animation: none;
   }
 }
+
+/* Texto de Apoiadores centralizados na horizontal */
+@media (max-width: 800px) {
+  #titulo-evento,
+  #titulo-patrocinadores {
+    margin-inline: auto;
+    text-align: center;
+  }
+}
