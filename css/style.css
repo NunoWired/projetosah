@@ -1564,7 +1564,7 @@ html:not([data-theme="dark"]) .brand-logo-image {
 
 @media screen and (max-width: 560px) {
   .site-header .brand-name {
-    font-size: 1.20rem !important;
+    font-size: 1.25rem !important;
     line-height: 1;
     white-space: nowrap;
   }
