@@ -1793,6 +1793,11 @@ html:not([data-theme="dark"]) .brand-logo-image {
   }
 }
 
+/* O botão desktop aparece normalmente */
+#theme-toggle {
+  display: grid;
+}
+
 /* No desktop, o botão mobile fica completamente oculto */
 #theme-toggle-mobile {
   display: none !important;
@@ -1838,6 +1843,17 @@ html:not([data-theme="dark"]) .brand-logo-image {
   height: 2px;
   margin: 3px 0;
   background: currentColor;
+}
+
+/* Remove quaisquer ícones extras criados por pseudo-elementos antigos */
+#theme-toggle::before,
+#theme-toggle::after,
+#theme-toggle-mobile::before,
+#theme-toggle-mobile::after,
+#theme-toggle span::after,
+#theme-toggle-mobile span::after {
+  content: none !important;
+  display: none !important;
 }
 
 /* O único ícone usado pelos dois botões */
