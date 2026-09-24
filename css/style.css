@@ -1534,3 +1534,33 @@ select {
     margin-left: auto;
   }
 }
+
+#titulo-principal {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hero-title-logo {
+  display: block;
+  width: min(420px, 100%);
+  height: auto;
+  max-height: 150px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+#titulo-principal span {
+  color: var(--terracotta);
+}
+
+@media (max-width: 560px) {
+  #titulo-principal {
+    gap: 10px;
+  }
+
+  .hero-title-logo {
+    width: min(280px, 100%);
+    max-height: 100px;
+  }
+}
