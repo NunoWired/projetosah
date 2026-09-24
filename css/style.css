@@ -1648,25 +1648,21 @@ select {
 /* Apoiadores de 2 em 2 na versão mobile */
 @media (max-width: 560px) {
   .sponsors-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas iguais */
-    gap: 12px; /* espaço entre os cards */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: center;
+    justify-items: stretch;
+    gap: 12px;
   }
 
   .sponsor-card {
-    min-width: 0;          /* evita estouro */
-    aspect-ratio: 1 / 1;   /* deixa os cards quadrados; remova se não quiser */
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    aspect-ratio: 1 / 1;
   }
 
-  .sponsor-card img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
+  /* Centraliza o último card quando a quantidade é ímpar */
+  .sponsor-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc((100% - 12px) / 2);
   }
 }
