@@ -1587,26 +1587,26 @@ select {
 /* Estilo base das 3 barras do menu hambúrguer */
 .menu-toggle span {
   display: block;
-  width: 24px;           /* ajuste se necessário */
-  height: 1px;
+  width: 24px;
+  height: 2px;
   background: currentColor;
-  margin: 5px 0;
+  margin: 4px 0;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-/* Quando o menu está aberto (.is-open no .main-nav),
-   aplicamos a transformação no .menu-toggle */
+/* Quando o menu está aberto */
 .main-nav.is-open ~ .menu-toggle span:nth-child(1),
 .menu-toggle.is-open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  transform: translateY(4px) rotate(45deg);
 }
 
 .main-nav.is-open ~ .menu-toggle span:nth-child(2),
 .menu-toggle.is-open span:nth-child(2) {
   opacity: 0;
+  transform: scaleX(0);
 }
 
 .main-nav.is-open ~ .menu-toggle span:nth-child(3),
 .menu-toggle.is-open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-4px) rotate(-45deg);
 }
