@@ -1696,10 +1696,10 @@ html:not([data-theme="dark"]) .brand-logo-image {
     left: 50%;
     z-index: 2;
     display: block;
-    max-width: calc(100vw - 225px);
+    max-width: calc(100vw - 190px);
     overflow: hidden;
     color: var(--terracotta) !important;
-    font-size: 1.08rem;
+    font-size: 1.75rem;
     line-height: 1;
     text-align: center;
     text-overflow: ellipsis;
