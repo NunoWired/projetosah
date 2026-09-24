@@ -1771,3 +1771,26 @@ main > section:last-child {
     background-position: right center;
   }
 }
+
+@media (max-width: 560px) {
+  /* Alinha o conteúdo e o título ao canto esquerdo */
+  #realizacao .realizacao-content {
+    text-align: left;
+  }
+
+  #realizacao .realizacao-content h2 {
+    margin-inline: 0;
+  }
+
+  /* Alinha o card com o título */
+  #realizacao .realizacao-grid {
+    justify-content: flex-start;
+    margin-top: 22px;
+  }
+
+  /* Reduz o card para mostrar mais do fundo */
+  #realizacao .realizacao-card {
+    width: min(175px, 100%);
+    padding: 14px;
+  }
+}
