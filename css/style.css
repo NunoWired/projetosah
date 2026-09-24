@@ -1561,7 +1561,3 @@ html:not([data-theme="dark"]) .brand-logo-image {
     z-index: 2;
   }
 }
-
-#titulo-principal {
-  color: var(#c28267);
-}
