@@ -1588,7 +1588,7 @@ select {
 .menu-toggle span {
   display: block;
   width: 24px;           /* ajuste se necessário */
-  height: 2px;
+  height: 1px;
   background: currentColor;
   margin: 5px 0;
   transition: transform 0.25s ease, opacity 0.25s ease;
