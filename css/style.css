@@ -1699,7 +1699,7 @@ html:not([data-theme="dark"]) .brand-logo-image {
     max-width: calc(100vw - 190px);
     overflow: hidden;
     color: var(--terracotta) !important;
-    font-size: 1.08rem;
+    font-size: 1.75rem;
     line-height: 1;
     text-align: center;
     text-overflow: ellipsis;
@@ -1711,5 +1711,87 @@ html:not([data-theme="dark"]) .brand-logo-image {
     position: relative;
     z-index: 3;
     margin-left: auto;
+  }
+}
+
+.brand-name {
+  font-size: 2.0rem;
+}
+
+@media screen and (max-width: 560px) {
+  .site-header .brand .brand-name {
+    font-size: 1.40rem !important;
+    line-height: 1;
+  }
+}
+
+/* Menu hamburguer: somente as três barras */
+.menu-toggle {
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  color: var(--text);
+  background: transparent;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 4px auto;
+  background: currentColor;
+}
+
+/* Botão de tema: somente o símbolo de lua/sol */
+.theme-toggle-mobile {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  z-index: 10;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--text);
+  background: transparent;
+  cursor: pointer;
+}
+
+.theme-toggle-mobile span {
+  display: block;
+  width: auto;
+  height: auto;
+  margin: 0;
+  background: transparent;
+}
+
+.theme-toggle-mobile span::before {
+  content: "☾";
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+[data-theme="dark"] .theme-toggle-mobile span::before {
+  content: "☀";
+}
+
+/* No celular, mostra o hamburguer */
+@media screen and (max-width: 800px) {
+  .menu-toggle {
+    display: grid;
+    place-content: center;
+    margin-left: auto;
+  }
+
+  .header-actions {
+    display: none;
   }
 }
