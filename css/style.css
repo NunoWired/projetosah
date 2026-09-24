@@ -1768,13 +1768,6 @@ html:not([data-theme="dark"]) .brand-logo-image {
   background: transparent;
 }
 
-.theme-toggle-mobile span::before {
-  content: "☾";
-  display: block;
-  font-size: 1.5rem;
-  line-height: 1;
-}
-
 /* No celular, mostra o hamburguer */
 @media screen and (max-width: 800px) {
   .menu-toggle {
@@ -1808,20 +1801,25 @@ html:not([data-theme="dark"]) .brand-logo-image {
   }
 }
 
-/* No desktop, o botão mobile fica completamente oculto */
-#theme-toggle-mobile {
-  display: none !important;
-}
-
 /* O botão desktop aparece normalmente */
 #theme-toggle {
   display: grid;
 }
 
+/* No desktop, o botão mobile fica completamente oculto */
+#theme-toggle-mobile {
+  display: none !important;
+}
+
 @media screen and (max-width: 800px) {
   /* No celular, o botão desktop desaparece */
-  .header-actions #theme-toggle {
+  /*.header-actions*/ 
+  #theme-toggle {
     display: none !important;
+  }
+
+  #theme-toggle-mobile {
+    display: grid !important;
   }
 
   /* O botão mobile aparece somente dentro do menu aberto */
