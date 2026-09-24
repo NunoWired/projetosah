@@ -1567,13 +1567,13 @@ select {
   }
 }
 
-/* Tamanho da logo no título da primeira sessão para mobile e centralizada na horizontal */
 @media (max-width: 560px) {
   #titulo-principal {
     align-items: center;
     text-align: center;
   }
 
+  /* Tamanho da logo no título da primeira sessão para mobile e centralizada na horizontal */
   .hero-title-logo {
     display: block;
     width: min(350px, 100%);
@@ -1583,41 +1583,26 @@ select {
   }
 }
 
-/* Animação das barras do menu hambúrguer */
-.menu-toggle .bar {
-  display: block;
-  width: 100%;
-  height: 2px;
-  background: currentColor;
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
-
-/* Quando o menu está aberto (.is-open no .main-nav),
-   assumimos que o .menu-toggle também recebe .is-open
-   (se não, veja o ajuste no JS abaixo) */
-.menu-toggle.is-open .bar:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
-}
-
-.menu-toggle.is-open .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.is-open .bar:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
-}
-
-/* Opcional: aplicar apenas no mobile */
+/* Ícone do menu vira "X" quando aberto */
 @media (max-width: 992px) {
-  .menu-toggle .bar {
+  .menu-toggle span {
+    display: block;
+    width: 24px;
     height: 2px;
+    background: currentColor;
+    margin: 5px 0;
+    transition: transform 0.25s ease, opacity 0.25s ease;
   }
 
-  .menu-toggle.is-open .bar:nth-child(1) {
-    transform: translateY(6px) rotate(45deg);
+  .main-nav.is-open ~ .menu-toggle span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
   }
 
-  .menu-toggle.is-open .bar:nth-child(3) {
-    transform: translateY(-6px) rotate(-45deg);
+  .main-nav.is-open ~ .menu-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .main-nav.is-open ~ .menu-toggle span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
   }
 }
