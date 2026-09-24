@@ -1658,3 +1658,19 @@ html:not([data-theme="dark"]) .brand-logo-image {
     display: none;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .brand {
+    position: relative;
+    flex: 1;
+    justify-content: flex-start;
+  }
+
+  .brand-name {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    text-align: center;
+  }
+}
