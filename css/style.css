@@ -1581,3 +1581,10 @@ select {
     object-position: center;
   }
 }
+
+/* Diminuir o espaço entre o fim da barra inicial e o conteúdo do site */
+@media (max-width: 560px) {
+  .hero {
+    padding-top: 40px;   /* reduza este valor conforme necessário: 30px, 20px, etc. */
+  }
+}
