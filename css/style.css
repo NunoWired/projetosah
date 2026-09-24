@@ -1569,3 +1569,7 @@ html:not([data-theme="dark"]) .brand-logo-image {
     white-space: nowrap;
   }
 }
+
+.hero #titulo-principal {
+  color: var(--terracotta) !important;
+}
