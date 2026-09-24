@@ -25,7 +25,14 @@ menuToggle?.addEventListener('click', () => {
 document.querySelectorAll('.main-nav a').forEach((link) => {
   link.addEventListener('click', () => {
     mainNav?.classList.remove('is-open');
+
+    /* Remove o estado visual do X e volta às 3 barras */
+    menuToggle?.classList.remove('is-open');
     menuToggle?.setAttribute('aria-expanded', 'false');
+    menuToggle?.setAttribute(
+      'aria-label',
+      'Abrir menu de navegação'
+    );
   });
 });
 
