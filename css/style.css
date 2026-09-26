@@ -2079,3 +2079,45 @@ main > section:last-child {
 .scroll-indicator:hover span {
   border-color: var(--terracotta);
 }
+
+#titulo-patrocinadores {
+  color: var(--terracotta);
+}
+
+.event-contact {
+  max-width: 640px;
+  margin: 42px auto 0;
+  padding: 24px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--terracotta);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.event-contact p {
+  margin: 8px 0;
+}
+
+.event-contact .event-contact-title {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.event-contact a {
+  color: var(--terracotta);
+  font-weight: 700;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.event-contact a:hover {
+  color: #e4ae96;
+}
+
+#contato {
+  scroll-margin-top: 96px;
+}
