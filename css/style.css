@@ -2121,3 +2121,43 @@ main > section:last-child {
 #contato {
   scroll-margin-top: 96px;
 }
+
+.event-contact {
+  width: min(640px, 100%);
+  margin: 42px auto 0;
+  padding: 24px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--terracotta);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.event-contact-heading {
+  margin: 0 0 16px;
+  color: var(--terracotta);
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2rem);
+}
+
+.event-contact p {
+  margin: 8px 0;
+}
+
+.event-contact .event-contact-title {
+  margin-bottom: 16px;
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.event-contact a {
+  color: var(--terracotta);
+  font-weight: 700;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.event-contact a:hover {
+  color: #e4ae96;
+}
