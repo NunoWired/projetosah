@@ -2162,9 +2162,19 @@ main > section:last-child {
   color: #e4ae96;
 }
 
-.realizacao-logo {
+/* Logo da seção Realização: preenche todo o quadro */
+#realizacao .realizacao-card {
+  padding: 0;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+#realizacao .realizacao-card img,
+#realizacao .realizacao-logo {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
 }
