@@ -2172,6 +2172,6 @@ main>section:last-child {
   object-fit: cover;
 
   /* Ajuste fino: aumente ou diminua até eliminar a borda visível */
-  transform: scale(1.15);
+  transform: scale(1.10);
   transform-origin: center;
 }
