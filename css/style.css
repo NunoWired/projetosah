@@ -2161,3 +2161,10 @@ main > section:last-child {
 .event-contact a:hover {
   color: #e4ae96;
 }
+
+.realizacao-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
