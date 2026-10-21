@@ -2188,3 +2188,9 @@ main>section:last-child {
   vertical-align: middle;
   font-feature-settings: "tnum" 1;
 }
+
+.site-header .brand-name {
+  display: inline-flex;
+  align-items: center;
+  font-feature-settings: "tnum" 1;
+}
