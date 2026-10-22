@@ -115,6 +115,25 @@
   align-items: center;
 }
 
+/* Centraliza o título e o único card de patrocinador */
+#evento .sponsors-block {
+  text-align: center;
+}
+
+#evento .sponsors-title {
+  margin-inline: auto;
+}
+
+#evento .sponsors-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#evento .sponsor-card {
+  width: min(280px, 100%);
+}
+
 @media (max-width: 560px) {
   .ticket-prices {
     grid-template-columns: 1fr;
