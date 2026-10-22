@@ -765,7 +765,7 @@ select {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 22px;
-  align-items: stretch;
+  align-items: start;
   margin: 30px 0;
 }
 
@@ -773,7 +773,6 @@ select {
   min-width: 0;
   overflow: hidden;
   border-radius: 10px;
-  aspect-ratio: 1 / 1;
 }
 
 /* O Instagram cria uma largura mínima no embed;
@@ -782,7 +781,6 @@ select {
   width: 100% !important;
   min-width: 0 !important;
   margin: 0 !important;
-  height: 100% !important;
 }
 
 @media (max-width: 1024px) {
@@ -1542,4 +1540,9 @@ select {
   .sponsor-card:last-child:nth-child(odd) {
     grid-column: 1 / -1;
   }
+}
+
+/* Padroniza a proporção dos cards do Instagram sem alterar a estrutura do embed */
+.instagram-embed-card {
+  aspect-ratio: 1 / 1;
 }
