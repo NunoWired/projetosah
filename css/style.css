@@ -116,7 +116,7 @@ h3 {
 
 .site-header {
   position: sticky;
-  top: 12px;
+  top: 0;
   z-index: 100;
   background: color-mix(in srgb, var(--background) 94%, transparent);
   border-bottom: 1px solid var(--border);
@@ -716,6 +716,75 @@ select {
 @media (max-width: 560px) {
   .brand-title {
     font-size: 1.25rem;
+  }
+}
+
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 90;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  padding: 0;
+  color: #ffffff;
+  background: var(--terracotta);
+  border: 1px solid var(--terracotta);
+  border-radius: 50%;
+  box-shadow: 0 10px 24px rgba(35, 53, 77, 0.25);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(16px);
+  transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s ease;
+}
+
+.back-to-top span {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: #ab6b52;
+  transform: translateY(-3px);
+}
+
+.back-to-top:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 4px;
+}
+
+@media (max-width: 560px) {
+  .back-to-top {
+    right: 16px;
+    bottom: 16px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.sponsors-title {
+  color: var(--text) !important;
+}
+
+@media (max-width: 800px) {
+  .brand-title {
+    font-size: 1.45rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .brand-title {
+    font-size: 1.2rem;
   }
 }
 
@@ -1539,5 +1608,570 @@ select {
   /* Centraliza o último card quando a quantidade é ímpar */
   .sponsor-card:last-child:nth-child(odd) {
     grid-column: 1 / -1;
+    justify-self: center;
+    width: calc((100% - 12px) / 2);
   }
+}
+
+/* 20 anos de Louvor com efeito de pulsação */
+.hero-louvor-pulse {
+  display: inline-block;
+  transform-origin: center;
+  animation: pulse-louvor 2.8s ease-in-out infinite;
+}
+
+@keyframes pulse-louvor {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.040);
+    opacity: 0.9;
+  }
+}
+
+/* Respeita pessoas que preferem menos animação */
+@media (prefers-reduced-motion: reduce) {
+  .hero-louvor-pulse {
+    animation: none;
+  }
+}
+
+/* Texto de Apoiadores centralizados na horizontal */
+@media (max-width: 800px) {
+
+  #titulo-evento,
+  #titulo-patrocinadores {
+    margin-inline: auto;
+    text-align: center;
+  }
+}
+
+/* Cada seção projeta uma sombra sobre a próxima */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
+}
+
+main>section {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 18px 28px rgba(0, 0, 0, 0.22);
+}
+
+/* A primeira seção fica acima das demais */
+main>section:nth-child(1) {
+  z-index: 10;
+}
+
+/* A segunda fica abaixo da primeira, mas acima da terceira */
+main>section:nth-child(2) {
+  z-index: 9;
+}
+
+main>section:nth-child(3) {
+  z-index: 8;
+}
+
+main>section:nth-child(4) {
+  z-index: 7;
+}
+
+main>section:nth-child(5) {
+  z-index: 6;
+}
+
+main>section:nth-child(6) {
+  z-index: 5;
+}
+
+main>section:last-child {
+  box-shadow: none;
+}
+
+/* Sombra do rodapé por cima da última sessão */
+.site-footer {
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 -12px 24px rgba(0, 0, 0, 0.22);
+}
+
+/* Imagem de fundo da sessão id="realizacao" */
+#realizacao {
+  position: relative;
+  isolation: isolate;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  background-image:
+    linear-gradient(rgba(35, 53, 77, 0.15),
+      rgba(35, 53, 77, 0.10)),
+    url("../assets/images/imagem_banner.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#realizacao,
+#realizacao h2,
+#realizacao .eyebrow {
+  color: #ffffff;
+}
+
+@media (max-width: 560px) {
+  #realizacao {
+    background-position: right center;
+  }
+}
+
+@media (max-width: 560px) {
+
+  /* Alinha o conteúdo e o título ao canto esquerdo */
+  #realizacao .realizacao-content {
+    text-align: left;
+  }
+
+  #realizacao .realizacao-content h2 {
+    margin-inline: 0;
+  }
+
+  /* Alinha o card com o título */
+  #realizacao .realizacao-grid {
+    justify-content: flex-start;
+    margin-top: 22px;
+  }
+
+  /* Reduz o card para mostrar mais do fundo */
+  #realizacao .realizacao-card {
+    width: min(175px, 100%);
+    padding: 14px;
+  }
+}
+
+/* Degradê suave da esquerda até a metade — somente no celular */
+@media (max-width: 560px) {
+  #realizacao {
+    background-image:
+      linear-gradient(90deg,
+        rgba(45, 64, 91, 0.25) 0%,
+        rgba(45, 64, 91, 0.25) 16%,
+        rgba(45, 64, 91, 0.25) 30%,
+        rgba(45, 64, 91, 0.25) 43%,
+        rgba(45, 64, 91, 0) 100%),
+      url("../assets/images/imagem_banner.jpg");
+
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+/* Indicador animado para continuar rolando a página */
+.scroll-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  width: 34px;
+  height: 42px;
+  transform: translateX(-50%);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.scroll-indicator span {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-right: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
+  transform: rotate(45deg);
+  opacity: 0;
+  animation: scroll-arrow 1.8s ease-in-out infinite;
+}
+
+/* A segunda seta entra na animação um pouco depois */
+.scroll-indicator span:nth-child(2) {
+  margin-top: -7px;
+  animation-delay: 0.2s;
+}
+
+@keyframes scroll-arrow {
+
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateY(-5px) rotate(45deg);
+  }
+
+  25% {
+    opacity: 0.95;
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(5px) rotate(45deg);
+  }
+
+  75% {
+    opacity: 0.5;
+  }
+}
+
+/* Ajuste da posição no celular */
+@media (max-width: 560px) {
+  .scroll-indicator {
+    bottom: 18px;
+  }
+
+  .scroll-indicator span {
+    width: 14px;
+    height: 14px;
+    border-width: 2px;
+  }
+}
+
+/* Respeita usuários que preferem menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-indicator span {
+    animation: none;
+    opacity: 0.9;
+  }
+}
+
+/* Altura maior e enquadramento da imagem somente no desktop */
+@media (min-width: 561px) {
+  #realizacao {
+    min-height: 900px;
+    background-position: center bottom;
+    background-image:
+      linear-gradient(rgba(35, 53, 77, 0.15),
+        rgba(35, 53, 77, 0.10)),
+      url("../assets/images/imagem_banner.jpg");
+  }
+}
+
+/* Vídeo de fundo exclusivo para desktop */
+.desktop-video-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.desktop-video-background .hero-background-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 561px) {
+  .desktop-video-background {
+    display: block;
+  }
+
+  .mobile-video-background {
+    display: none;
+  }
+
+  .mobile-video-overlay {
+    display: block;
+    background: linear-gradient(90deg,
+        rgba(35, 53, 77, 0.86) 0%,
+        rgba(35, 53, 77, 0.70) 42%,
+        rgba(35, 53, 77, 0.18) 76%,
+        rgba(35, 53, 77, 0.06) 100%);
+  }
+}
+
+@media (max-width: 560px) {
+  .desktop-video-background {
+    display: none;
+  }
+
+  .mobile-video-background {
+    display: block;
+  }
+}
+
+.hero {
+  background-image: none;
+  background-color: var(--navy);
+}
+
+@media (min-width: 561px) {
+  .mobile-video-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    display: block;
+    background: linear-gradient(90deg,
+        rgba(35, 53, 77, 0.86) 0%,
+        rgba(35, 53, 77, 0.70) 42%,
+        rgba(35, 53, 77, 0.18) 76%,
+        rgba(35, 53, 77, 0.06) 100%);
+  }
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand-mark,
+.brand-logo-image {
+  display: block;
+  width: auto;
+  height: 52px;
+  max-width: 180px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.brand-name {
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+@media (max-width: 800px) {
+  .header-content {
+    position: relative;
+    min-height: 76px;
+  }
+
+  .brand {
+    position: static;
+    flex: 1;
+  }
+
+  .brand-mark,
+  .brand-logo-image {
+    width: auto;
+    height: 40px;
+    max-width: 100px;
+  }
+
+  .brand-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    max-width: calc(100vw - 190px);
+    overflow: hidden;
+    color: #ffffff;
+    font-size: 1.4rem;
+    text-align: center;
+    text-overflow: ellipsis;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Vídeo de fundo da primeira seção: desktop */
+.desktop-video-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: none;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.desktop-video-background .hero-background-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Exibe somente acima de 560px */
+@media (min-width: 561px) {
+  .desktop-video-background {
+    display: block;
+  }
+
+  .hero {
+    background-image: none;
+    background-color: var(--navy);
+  }
+
+  .mobile-video-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: block;
+    pointer-events: none;
+    background: linear-gradient(90deg,
+        rgba(35, 53, 77, 0.86) 0%,
+        rgba(35, 53, 77, 0.70) 42%,
+        rgba(35, 53, 77, 0.18) 76%,
+        rgba(35, 53, 77, 0.06) 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+/* Camada de degradê sobre o vídeo do hero no desktop */
+@media (min-width: 561px) {
+  .desktop-video-background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(90deg,
+        rgba(35, 53, 77, 0.93) 0%,
+        rgba(35, 53, 77, 0.78) 55%,
+        rgba(35, 53, 77, 0.48) 100%);
+  }
+
+  .desktop-video-background .hero-background-video {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+/* A logo interna do menu aparece somente quando o menu mobile é exibido */
+@media (min-width: 801px) {
+  .mobile-menu-logo {
+    display: none !important;
+  }
+}
+
+.scroll-indicator:hover span {
+  border-color: var(--terracotta);
+}
+
+#titulo-patrocinadores {
+  color: var(--terracotta);
+}
+
+.event-contact {
+  max-width: 640px;
+  margin: 42px auto 0;
+  padding: 24px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--terracotta);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.event-contact p {
+  margin: 8px 0;
+}
+
+.event-contact .event-contact-title {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.event-contact a {
+  color: var(--terracotta);
+  font-weight: 700;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.event-contact a:hover {
+  color: #e4ae96;
+}
+
+#contato {
+  scroll-margin-top: 96px;
+}
+
+.event-contact {
+  width: min(640px, 100%);
+  margin: 42px auto 0;
+  padding: 24px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--terracotta);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.event-contact-heading {
+  margin: 0 0 16px;
+  color: var(--terracotta);
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2rem);
+}
+
+.event-contact p {
+  margin: 8px 0;
+}
+
+.event-contact .event-contact-title {
+  margin-bottom: 16px;
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.event-contact a {
+  color: var(--terracotta);
+  font-weight: 700;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.event-contact a:hover {
+  color: #e4ae96;
+}
+
+/* Logo da seção Realização: preenche todo o quadro */
+#realizacao .realizacao-card {
+  padding: 0;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+#realizacao .realizacao-card img,
+#realizacao .realizacao-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+
+  /* Ajuste fino: aumente ou diminua até eliminar a borda visível */
+  transform: scale(1.0);
+  transform-origin: center;
 }
