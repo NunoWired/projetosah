@@ -110,6 +110,11 @@
   text-align: center;
 }
 
+/* Centraliza o card do WhatsApp verticalmente na seção */
+#ingressos .ticket-layout {
+  align-items: center;
+}
+
 @media (max-width: 560px) {
   .ticket-prices {
     grid-template-columns: 1fr;
