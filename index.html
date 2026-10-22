@@ -14,6 +14,45 @@
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Pacifico&family=Playfair+Display:wght@600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    #ingressos .ticket-prices {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(10px, 2vw, 24px);
+      margin: 30px 0;
+    }
+    #ingressos .ticket-price-card {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(16px, 2vw, 28px) 10px;
+      background: var(--surface);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    #ingressos .ticket-price-card h3 {
+      margin: 0 0 18px;
+      color: #fff;
+      font-size: clamp(1rem, 1.8vw, 1.4rem);
+    }
+    #ingressos .ticket-price-card .ticket-price {
+      margin: 0 0 18px;
+      color: #fff;
+      font-size: clamp(1.55rem, 3vw, 2.7rem);
+      font-weight: 800;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    #ingressos .ticket-price-card .ticket-price-note {
+      margin: 0;
+      color: var(--terracotta);
+      font-size: clamp(.8rem, 1.3vw, 1rem);
+      line-height: 1.5;
+    }
+  </style>
   <script src="js/script.js" defer></script>
 </head>
 
@@ -168,13 +207,25 @@
           <p>
             Quer viver de perto essa noite especial de louvor e gravação ao vivo?
             Os ingressos estão sendo vendidos diretamente pelo WhatsApp da
-            <strong>Ressoa Produções</strong>.
+            <strong>Ressoa Produções</strong>. Fale com a equipe, tire suas dúvidas e garanta o seu lugar.
           </p>
 
+          <div class="ticket-prices" aria-label="Valores dos ingressos">
+            <article class="ticket-price-card">
+              <h3>Inteira</h3>
+              <p class="ticket-price">R$ 30,00</p>
+              <p class="ticket-price-note">Ingresso individual</p>
+            </article>
+            <article class="ticket-price-card">
+              <h3>Meia-entrada</h3>
+              <p class="ticket-price">R$ 15,00</p>
+              <p class="ticket-price-note">+ 1 chamequinho de papel sulfite A4</p>
+            </article>
+          </div>
+
           <ul class="ticket-benefits">
-            <li><strong>Inteira:</strong> R$ 30,00</li>
-            <li><strong>Meia-entrada:</strong> R$ 15,00 + 1 chamequinho de papel sulfite A4</li>
             <li>Venda e atendimento pela Ressoa Produções</li>
+            <li>Informações sobre disponibilidade e formas de pagamento</li>
             <li>Compra facilitada pelo WhatsApp Business</li>
           </ul>
         </div>
