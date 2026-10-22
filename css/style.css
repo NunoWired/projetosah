@@ -1541,8 +1541,3 @@ select {
     grid-column: 1 / -1;
   }
 }
-
-/* Padroniza a proporção dos cards do Instagram sem alterar a estrutura do embed */
-.instagram-embed-card {
-  aspect-ratio: 1 / 1;
-}
