@@ -58,7 +58,7 @@
             aria-label="Abrir perfil do músico no Instagram" title="Instagram">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path
-                d="M7.1 2h9.8A5.1 5.1 0 0 1 22 7.1v9.8a5.1 5.1 0 0 1-5.1 5.1H7.1A5.1 5.1 0 0 1 2 16.9V7.1A5.1 5.1 0 0 1 7.1 2Zm-.2 2A2.9 2.9 0 0 0 4 6.9v10.2A2.9 2.9 0 0 0 6.9 20h10.2a2.9 2.9 0 0 0 2.9-2.9V6.9A2.9 2.9 0 0 0 17.1 4H6.9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm5.3-3.9a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z">
+                d="M7.1 2h9.8A5.1 5.1 0 0 1 22 7.1v9.8a5.1 5.1 0 0 1-5.1 5.1H7.1A5.1 5.1 0 0 1 2 16.9V7.1A5.1 5.1 0 0 1 7.1 2Zm-.2 2A2.9 2.9 0 0 0 4 6.9v10.2A2.9 2.9 0 0 0 6.9 20h10.2a2.9 2.9 0 0 0 2.9-2.9V6.9ZM12 7a5 5 0 1 1 0 10 5 5 0 1 1 0-10Zm0 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 1 0 0-5.6Zm5.3-3.9a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 1 1 0-2.4Z">
               </path>
             </svg>
             <span class="sr-only">Instagram</span>
@@ -165,63 +165,69 @@
         <div class="ticket-intro">
           <p class="eyebrow">Ingressos</p>
           <h2 id="titulo-ingressos">Garanta sua participação</h2>
-          <p>Os valores, lotes promocionais e instruções de pagamento via Pix serão exibidos aqui.</p>
+          <p>
+            Quer viver de perto essa noite especial de louvor e gravação ao vivo?
+            Os ingressos estão sendo vendidos diretamente pelo WhatsApp da
+            <strong>Ressoa Produções</strong>. Fale com a equipe, tire suas dúvidas
+            e garanta o seu lugar.
+          </p>
+
+          <div class="ticket-prices">
+            <article class="ticket-price-card">
+              <h3>Inteira</h3>
+              <p class="ticket-price">R$ 30,00</p>
+              <p class="ticket-price-note">Ingresso individual</p>
+            </article>
+
+            <article class="ticket-price-card">
+              <h3>Meia-entrada</h3>
+              <p class="ticket-price">R$ 15,00</p>
+              <p class="ticket-price-note">
+                + 1 chamequinho de papel sulfite A4
+              </p>
+            </article>
+          </div>
 
           <ul class="ticket-benefits">
-            <li>Pagamento rápido via Pix</li>
-            <li>Confirmação enviada por e-mail</li>
-            <li>Número de venda para acompanhamento</li>
+            <li>Venda e atendimento pela Ressoa Produções</li>
+            <li>Informações sobre disponibilidade e formas de pagamento</li>
+            <li>Compra facilitada pelo WhatsApp Business</li>
           </ul>
         </div>
 
-        <form id="ticket-form" class="ticket-form" novalidate>
-          <h3>Reserva de ingresso</h3>
+        <div class="ticket-form whatsapp-card">
+          <h3>Compre seu ingresso pelo WhatsApp</h3>
+          <p>
+            Clique no botão abaixo para falar com a <strong>Ressoa Produções</strong>.
+            A mensagem já será preparada para agilizar o seu atendimento.
+          </p>
 
-          <div class="form-field">
-            <label for="nome">Nome completo</label>
-            <input id="nome" name="nome" type="text" autocomplete="name" required>
-          </div>
+          <a
+            class="whatsapp-button"
+            href="https://wa.me/5561995523927?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20os%20ingressos%20do%20evento%20Nada%20Pode%20Parar%20o%20Poder%20de%20Deus."
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Comprar ingresso pelo WhatsApp Business da Ressoa Produções"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.347-.347.52-.52.174-.174.232-.298.347-.497.116-.198.058-.371-.03-.52-.087-.148-.669-1.612-.916-2.207-.242-.579-.487-.487-.669-.497-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 016.988 2.898 9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
 
-          <div class="form-field">
-            <label for="email">E-mail</label>
-            <input id="email" name="email" type="email" autocomplete="email" required>
-          </div>
+            <span class="whatsapp-button-text">
+              <strong>Comprar pelo WhatsApp</strong>
+              <small>Ressoa Produções • WhatsApp Business</small>
+            </span>
+          </a>
 
-          <div class="form-field">
-            <label for="telefone">Telefone / WhatsApp</label>
-            <input id="telefone" name="telefone" type="tel" autocomplete="tel" required>
-          </div>
+          <p class="whatsapp-contact">
+            <strong>(61) 99552-3927</strong><br>
+            Ressoa Produções
+          </p>
 
-          <div class="form-row">
-            <div class="form-field">
-              <label for="tipo-ingresso">Ingresso</label>
-              <select id="tipo-ingresso" name="tipo-ingresso" required>
-                <option value="">Selecione</option>
-                <option>Promocional</option>
-                <option>Inteira</option>
-                <option>Meia-entrada</option>
-              </select>
-            </div>
-
-            <div class="form-field">
-              <label for="quantidade">Quantidade</label>
-              <input id="quantidade" name="quantidade" type="number" min="1" max="10" value="1" required>
-            </div>
-          </div>
-
-          <label class="checkbox-field" for="newsletter">
-            <input id="newsletter" name="newsletter" type="checkbox">
-            <span>Quero receber novidades e promoções por e-mail.</span>
-          </label>
-
-          <label class="checkbox-field" for="termos">
-            <input id="termos" name="termos" type="checkbox" required>
-            <span>Li e aceito os termos de compra e a política de privacidade.</span>
-          </label>
-
-          <button class="button button-full" type="submit">Continuar para o Pix</button>
-          <p id="form-message" class="form-message" aria-live="polite"></p>
-        </form>
+          <p class="whatsapp-note">
+            No computador, o WhatsApp Web será aberto. No celular, o aplicativo do WhatsApp será aberto automaticamente.
+          </p>
+        </div>
       </div>
     </section>
 
