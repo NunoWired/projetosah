@@ -26,6 +26,22 @@
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
+    .site-footer .footer-credit {
+      line-height: 1.8;
+    }
+    .site-footer .footer-credit a {
+      display: inline-flex;
+      align-items: center;
+      vertical-align: middle;
+      margin-left: 4px;
+      text-decoration: none;
+    }
+    .site-footer .footer-credit img {
+      display: block;
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
     .site-header .brand-name {
       font-family: var(--font-body);
     }
@@ -463,10 +479,9 @@
   <footer class="site-footer">
     <div class="container footer-content">
       <p>© <span id="current-year"></span> Todos os direitos reservados.</p>
-      <div>
-        <a href="#">Política de privacidade</a>
-        <a href="#">Termos de compra</a>
-      </div>
+      <p class="footer-credit">Código com <em>Propósito</em> e muito
+        <a href="https://nunowired.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Visitar o portfólio de Antonio Nunes" title="Visitar meu portfólio"><img src="https://nunowired.github.io/assets/coffee.png" alt="Xícara de café" width="32" height="32" loading="lazy"></a>
+      </p>
     </div>
   </footer>
 
