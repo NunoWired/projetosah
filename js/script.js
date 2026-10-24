@@ -199,3 +199,71 @@ backToTopButton?.addEventListener('click', () => {
     syncButtons();
   });
 })();
+
+(() => {
+  const form = document.getElementById('ticket-purchase-form');
+  const full = document.getElementById('ticket-quantity-full');
+  const half = document.getElementById('ticket-quantity-half');
+  const message = document.getElementById('ticket-whatsapp-message');
+  if (!form || !full || !half || !message) return;
+  const money = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+  form.addEventListener('submit', event => {
+    if (event.defaultPrevented) return;
+    const inteiras = full.valueAsNumber;
+    const meias = half.valueAsNumber;
+    const total = inteiras * 30 + meias * 15;
+    if (![inteiras, meias].every(n => Number.isSafeInteger(n) && n >= 0) || inteiras + meias === 0 || !Number.isSafeInteger(total * 100) || !message.value.trim()) {
+      event.preventDefault();
+      return;
+    }
+    const text = message.value.replace(/^Valor total[^\r\n]*(?:\r?\n|$)/gm, '').trim();
+    message.value = `${text}\n\nValor total a pagar (soma de todos os ingressos): ${money.format(total)}`;
+  });
+})();
+
+(() => {
+  const layout = document.querySelector('#ingressos > .ticket-layout');
+  const prices = layout?.querySelector('.ticket-intro > .ticket-prices');
+  const purchase = layout?.querySelector('.ticket-purchase-action');
+  if (!layout || !prices || !purchase) return;
+  purchase.classList.add('ticket-price-card');
+  prices.append(purchase);
+  const style = document.createElement('style');
+  style.textContent = `
+    #ingressos > .ticket-layout {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    #ingressos > .ticket-layout .ticket-intro > .ticket-prices {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
+    }
+    #ingressos > .ticket-layout .ticket-purchase-action.ticket-price-card {
+      align-self: stretch;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      padding: clamp(16px, 2vw, 28px);
+      background: var(--surface);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    #ingressos > .ticket-layout .ticket-purchase-action > .button {
+      max-width: 100%;
+      min-width: 0;
+      padding: 14px 18px;
+      font-size: 1rem;
+    }
+    #ingressos > .ticket-layout .ticket-purchase-action > p {
+      margin: 0;
+      font-size: .95rem;
+      line-height: 1.6;
+    }
+    @media (max-width: 700px) {
+      #ingressos > .ticket-layout .ticket-intro > .ticket-prices {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  `;
+  document.head.append(style);
+})();
