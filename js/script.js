@@ -167,6 +167,8 @@ backToTopButton?.addEventListener('click', () => {
   [['ticket-quantity-full', 'inteiras'], ['ticket-quantity-half', 'meias']].forEach(([id, category]) => {
     const input = document.getElementById(id);
     if (!input || input.closest('.ticket-stepper')) return;
+    input.defaultValue = '0';
+    input.value = '0';
     input.readOnly = true;
     input.setAttribute('inputmode', 'none');
     const wrapper = document.createElement('div');
@@ -197,6 +199,7 @@ backToTopButton?.addEventListener('click', () => {
     };
     input.addEventListener('input', syncButtons);
     syncButtons();
+    input.dispatchEvent(new Event('input', { bubbles: true }));
   });
 })();
 
