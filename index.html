@@ -171,6 +171,103 @@
         transform: none;
       }
     }
+    #ingressos .ticket-purchase-action {
+      align-self: center;
+      text-align: center;
+      min-width: 0;
+    }
+    #ingressos .ticket-purchase-action > .button {
+      min-height: 60px;
+      padding: 16px 30px;
+      font-size: 1.1rem;
+    }
+    #ticket-purchase-dialog {
+      width: min(680px, calc(100% - 28px));
+      max-height: calc(100dvh - 32px);
+      margin: auto;
+      padding: clamp(20px, 4vw, 36px);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .5);
+    }
+    #ticket-purchase-dialog::backdrop {
+      background: rgba(0, 0, 0, .78);
+    }
+    #ticket-purchase-dialog .ticket-dialog-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    #ticket-purchase-dialog .ticket-dialog-header h3 {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      text-align: left;
+    }
+    #ticket-purchase-dialog .ticket-dialog-close {
+      flex: 0 0 auto;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      color: var(--text);
+      background: var(--background);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+    #ticket-purchase-dialog .ticket-price-card {
+      background: var(--background);
+    }
+    #ticket-purchase-dialog .ticket-quantity-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin: 20px 0;
+    }
+    #ticket-purchase-dialog .ticket-quantity-field {
+      display: grid;
+      gap: 8px;
+      min-width: 0;
+    }
+    #ticket-purchase-dialog .ticket-quantity-field input {
+      min-height: 48px;
+      font-size: 1.15rem;
+    }
+    #ticket-purchase-dialog .ticket-quantity-field input::-webkit-inner-spin-button {
+      opacity: 1;
+    }
+    #ticket-purchase-dialog .ticket-order-summary {
+      padding: 16px;
+      margin: 20px 0;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--background);
+      font-weight: 700;
+    }
+    #ticket-purchase-dialog .ticket-order-summary p {
+      margin: 4px 0;
+    }
+    #ticket-purchase-dialog .ticket-order-error {
+      color: #ffd5c4;
+      min-height: 1.5em;
+      margin: 12px 0;
+    }
+    #ticket-purchase-dialog .ticket-purchase-note {
+      font-size: .9rem;
+      line-height: 1.6;
+    }
+    @media (max-width: 380px) {
+      #ticket-purchase-dialog .ticket-prices,
+      #ticket-purchase-dialog .ticket-quantity-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
   <script src="js/script.js" defer></script>
 </head>
@@ -348,28 +445,57 @@
           </ul>
         </div>
 
-        <div class="ticket-form whatsapp-card">
-          <h3>Compre seu ingresso</h3>
-          <p>
-            Clique no botão abaixo para falar com a <strong>Ressoa Produções</strong>.
-            A mensagem já será preparada para agilizar o seu atendimento.
-          </p>
+        <div class="ticket-purchase-action">
+          <button id="ticket-purchase-open" class="button" type="button" aria-haspopup="dialog" aria-controls="ticket-purchase-dialog">Comprar ingressos</button>
+          <p>Selecione a quantidade de ingressos e continue a compra pelo WhatsApp.</p>
+          <noscript><p>Para comprar, fale com a Ressoa Produções: <a href="https://wa.me/5561995523927" target="_blank" rel="noopener noreferrer">(61) 99552-3927</a>.</p></noscript>
+        </div>
+      </div>
 
-          <a class="button button-full whatsapp-button"
-            href="https://wa.me/5561995523927?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20os%20ingressos%20do%20evento%20Nada%20Pode%20Parar%20o%20Poder%20de%20Deus."
-            target="_blank" rel="noopener noreferrer">
+      <dialog id="ticket-purchase-dialog" class="whatsapp-card" aria-labelledby="ticket-dialog-title" aria-describedby="ticket-dialog-description">
+        <div class="ticket-dialog-header">
+          <h3 id="ticket-dialog-title">Compre seu ingresso</h3>
+          <button id="ticket-purchase-close" class="ticket-dialog-close" type="button" aria-label="Fechar seleção de ingressos">×</button>
+        </div>
+        <p id="ticket-dialog-description">Escolha quantas entradas inteiras e meias deseja adquirir. Use 0 na categoria que não quiser.</p>
+        <div class="ticket-prices" aria-label="Valores dos ingressos">
+          <article class="ticket-price-card">
+            <h3>Inteira</h3>
+            <p class="ticket-price">R$ 30,00</p>
+            <p class="ticket-price-note">Ingresso individual</p>
+          </article>
+          <article class="ticket-price-card">
+            <h3>Meia-entrada</h3>
+            <p class="ticket-price">R$ 15,00</p>
+            <p class="ticket-price-note">+ 1 chamequinho de papel sulfite A4</p>
+          </article>
+        </div>
+        <form id="ticket-purchase-form" action="https://wa.me/5561995523927" method="get" target="_blank" rel="noopener noreferrer" novalidate>
+          <div class="ticket-quantity-grid">
+            <div class="ticket-quantity-field">
+              <label for="ticket-quantity-full">Quantidade de inteiras</label>
+              <input id="ticket-quantity-full" type="number" min="0" step="1" value="1" inputmode="numeric" required autofocus>
+            </div>
+            <div class="ticket-quantity-field">
+              <label for="ticket-quantity-half">Quantidade de meias</label>
+              <input id="ticket-quantity-half" type="number" min="0" step="1" value="1" inputmode="numeric" required>
+            </div>
+          </div>
+          <div id="ticket-order-summary" class="ticket-order-summary" aria-live="polite" aria-atomic="true"></div>
+          <p class="ticket-purchase-note">Meia-entrada: R$ 15,00 + 1 chamequinho de papel sulfite A4, conforme a condição informada acima.</p>
+          <p id="ticket-order-error" class="ticket-order-error" role="alert"></p>
+          <p>Clique no botão abaixo para falar com a <strong>Ressoa Produções</strong>. A mensagem já será preparada com as quantidades e os valores escolhidos para agilizar o seu atendimento.</p>
+          <input id="ticket-whatsapp-message" type="hidden" name="text">
+          <button class="button button-full whatsapp-button" type="submit">
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.347-.347.52-.52.174-.174.232-.298.347-.497.116-.198.058-.371-.03-.52-.087-.148-.669-1.612-.916-2.207-.242-.579-.487-.487-.669-.497-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 016.988 2.898 9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
             </svg>
             <span>Comprar pelo WhatsApp</span>
-          </a>
-
-          <p class="form-message whatsapp-contact">
-            <strong>(61) 99552-3927</strong><br>
-            Ressoa Produções
-          </p>
-        </div>
-      </div>
+          </button>
+          <p class="whatsapp-contact"><strong>(61) 99552-3927</strong><br>Ressoa Produções</p>
+          <p class="ticket-purchase-note">O WhatsApp será aberto com a mensagem pronta. Revise e envie para confirmar a disponibilidade e combinar o pagamento com a equipe. A seleção no site não confirma a compra.</p>
+        </form>
+      </dialog>
     </section>
 
     <section id="evento" class="section" aria-labelledby="titulo-evento">
@@ -513,6 +639,88 @@
     <span aria-hidden="true">↑</span>
   </button>
 
+  <script>
+    (() => {
+      const dialog = document.getElementById('ticket-purchase-dialog');
+      const openButton = document.getElementById('ticket-purchase-open');
+      const closeButton = document.getElementById('ticket-purchase-close');
+      const form = document.getElementById('ticket-purchase-form');
+      const full = document.getElementById('ticket-quantity-full');
+      const half = document.getElementById('ticket-quantity-half');
+      const summary = document.getElementById('ticket-order-summary');
+      const error = document.getElementById('ticket-order-error');
+      const message = document.getElementById('ticket-whatsapp-message');
+      const money = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+      let previousOverflow = '';
+      const readOrder = () => {
+        const quantities = [full.valueAsNumber, half.valueAsNumber];
+        const valid = quantities.every(n => Number.isSafeInteger(n) && n >= 0);
+        const [inteiras, meias] = quantities;
+        const total = inteiras + meias;
+        const amount = inteiras * 30 + meias * 15;
+        return { inteiras, meias, total, amount, valid: valid && Number.isSafeInteger(total) && Number.isSafeInteger(amount * 100) };
+      };
+      const update = () => {
+        const order = readOrder();
+        summary.replaceChildren();
+        error.textContent = '';
+        if (!order.valid) {
+          error.textContent = 'Informe quantidades inteiras, iguais ou maiores que zero.';
+          message.value = '';
+          return;
+        }
+        const lines = [];
+        if (order.inteiras > 0) lines.push(`Inteiras: ${order.inteiras} × ${money.format(30)} = ${money.format(order.inteiras * 30)}`);
+        if (order.meias > 0) lines.push(`Meias: ${order.meias} × ${money.format(15)} = ${money.format(order.meias * 15)}`);
+        [...lines, `Valor total: ${money.format(order.amount)}`, `Quantidade total de ingressos: ${order.total}`].forEach(text => {
+          const p = document.createElement('p');
+          p.textContent = text;
+          summary.append(p);
+        });
+        if (order.total === 0) {
+          error.textContent = 'Selecione pelo menos um ingresso para continuar.';
+          message.value = '';
+          return;
+        }
+        message.value = [
+          `Olá. Gostaria de adquirir ${order.total} ingressos(s) para o evento Nada Pode Parar o Poder de Deus. Quero confirmar a compra e efetuar o pagamento.`,
+          '',
+          ...lines,
+          ...(order.meias > 0 ? ['Condição da meia-entrada: + 1 chamequinho de papel sulfite A4.'] : []),
+          `Valor total: ${money.format(order.amount)}`,
+          `Quantidade total de ingressos: ${order.total}`
+        ].join('\n');
+      };
+      openButton.addEventListener('click', () => {
+        if (dialog.open) return;
+        update();
+        previousOverflow = document.body.style.overflow;
+        dialog.showModal();
+        document.body.style.overflow = 'hidden';
+      });
+      closeButton.addEventListener('click', () => dialog.close());
+      dialog.addEventListener('close', () => {
+        document.body.style.overflow = previousOverflow;
+        openButton.focus({ preventScroll: true });
+      });
+      dialog.addEventListener('click', event => {
+        if (event.target !== dialog) return;
+        const box = dialog.getBoundingClientRect();
+        if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
+      });
+      [full, half].forEach(input => input.addEventListener('input', update));
+      form.addEventListener('submit', event => {
+        update();
+        const order = readOrder();
+        if (!form.checkValidity() || !order.valid || order.total === 0) {
+          event.preventDefault();
+          form.reportValidity();
+          if (order.total === 0) full.focus();
+        }
+      });
+      update();
+    })();
+  </script>
   <script async src="https://www.instagram.com/embed.js"></script>
 </body>
 
