@@ -196,3 +196,19 @@ backToTopButton?.addEventListener('click', () => window.scrollTo({ top: 0, behav
     third.style.display = 'none';
   }
 })();
+
+(() => {
+  if (!document.querySelector('#evento .sponsors-grid')) return;
+  const style = document.createElement('style');
+  style.textContent = `
+    @media (min-width: 801px) {
+      #evento .sponsors-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, calc((100% - 44px) / 3)));
+        justify-content: center;
+        gap: 22px;
+      }
+    }
+  `;
+  document.head.append(style);
+})();
