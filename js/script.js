@@ -172,3 +172,27 @@ backToTopButton?.addEventListener('click', () => window.scrollTo({ top: 0, behav
   `;
   document.head.append(style);
 })();
+
+(() => {
+  const grid = document.querySelector('#evento .sponsors-grid');
+  if (!grid) return;
+  const cards = grid.querySelectorAll(':scope > .sponsor-card');
+  const second = cards[1];
+  const third = cards[2];
+  if (second) {
+    second.classList.add('sponsor-card-image');
+    second.setAttribute('href', 'https://www.instagram.com/divinagraca.fe/');
+    second.setAttribute('target', '_blank');
+    second.setAttribute('rel', 'noopener noreferrer');
+    second.setAttribute('aria-label', 'Visitar o Instagram de @divinagraca.fe');
+    const image = document.createElement('img');
+    image.src = 'assets/images/apoio_02.png';
+    image.alt = 'Logo do apoiador @divinagraca.fe';
+    image.loading = 'lazy';
+    second.replaceChildren(image);
+  }
+  if (third) {
+    third.hidden = true;
+    third.style.display = 'none';
+  }
+})();
